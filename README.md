@@ -12,7 +12,9 @@ Additionally, some lecture notes (and problems to be added later) assume you hav
 These are the first lectures that I will add to this short course
 
 * Basics of Antennas and Free-space Propagation 
+    * Lecture: [[PDF]](./lectures/Unit01_Antennas.pdf) [[PPT]](./lectures/Unit01_Antennas.pptx) 
 * Non-LOS Propagation and Link-Budget Analysis 
+    * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
 * Multipath Fading
 * Multiple Antennas and Beamforming
 * Introduction to MIMO 
