@@ -1,0 +1,346 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Demo:  Antennas</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-03-31"><meta name="DC.source" content="demo_antennas.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Demo:  Antennas</h1><!--introduction--><p>In this demo, we will illustrate some basic MATLAB tools for computing and displaying antenna patterns.  Specifically, you will learn to:</p><div><ul><li>Perform basic manipulations in spherical coordinates</li><li>Define simple antenna patterns using the antenna toolbox</li><li>Plot the antenna patterns in 2D and 3D</li><li>Use the antenna patterns to compute gains along paths</li></ul></div><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Spherical coordiantes.</a></li><li><a href="#2">Simulation constants</a></li><li><a href="#3">Dipole antenna</a></li><li><a href="#4">Displaying the pattern</a></li><li><a href="#5">Patch Element</a></li><li><a href="#6">Plotting a cross-section</a></li><li><a href="#7">Creating a custom antenna pattern</a></li><li><a href="#8">Interpolating the directivity in the custom pattern</a></li></ul></div><h2 id="1">Spherical coordiantes.</h2><p>We first demonstrate how to perform basic manipulations in spherical coordinates.</p><p>For example, the code below generate four random points in 3D converts them to spherical and then converts them.</p><pre class="codeinput"><span class="comment">% Generate random data</span>
+X = randn(3,4);
+
+<span class="comment">% Compute spherical coordinates of a matrix of points</span>
+<span class="comment">% Note these are in radians!</span>
+[az, el, rad] = cart2sph(X(1,:), X(2,:), X(3,:));
+
+<span class="comment">% We can then convert Convert back</span>
+[x,y,z] = sph2cart(az,el,rad);
+Xhat = [x; y; z];
+</pre><h2 id="2">Simulation constants</h2><p>For the remainder of the demo, we will use the following simulation constants&ccedil;</p><p>Note:  In MATLAB, all values are in metric units m, s, Hz, etc. Not GHz or MHz.</p><pre class="codeinput">fc = 2.3e9;     <span class="comment">% Carrier frequency</span>
+vp = physconst(<span class="string">'lightspeed'</span>);  <span class="comment">% speed of light</span>
+lambda = vp/fc;   <span class="comment">% wavelength</span>
+</pre><h2 id="3">Dipole antenna</h2><p>Next, we will construct a simple dipole antenna.</p><pre class="codeinput"><span class="comment">% Construct the antenna object</span>
+ant = dipole(<span class="keyword">...</span>
+    <span class="string">'Length'</span>, lambda/2,<span class="keyword">...</span>
+    <span class="string">'Width'</span>, 0.01*lambda );
+
+<span class="comment">% Display the antenna</span>
+ant.show();
+</pre><img vspace="5" hspace="5" src="demo_antennas_01.png" alt=""> <h2 id="4">Displaying the pattern</h2><p>We can display the antenna pattern with the following command.</p><pre class="codeinput">ant.pattern(fc)
+</pre><img vspace="5" hspace="5" src="demo_antennas_02.png" alt=""> <h2 id="5">Patch Element</h2><pre class="codeinput">len = 0.49*lambda;
+groundPlaneLen = lambda;
+ant2 = patchMicrostrip(<span class="keyword">...</span>
+    <span class="string">'Length'</span>, len, <span class="string">'Width'</span>, 1.5*len, <span class="keyword">...</span>
+    <span class="string">'GroundPlaneLength'</span>, groundPlaneLen, <span class="keyword">...</span>
+    <span class="string">'GroundPlaneWidth'</span>, groundPlaneLen, <span class="keyword">...</span>
+    <span class="string">'Height'</span>, 0.01*lambda, <span class="keyword">...</span>
+    <span class="string">'FeedOffset'</span>, [0.25*len 0]);
+
+<span class="comment">% Tilt the element so that the maximum energy is in the x-axis</span>
+ant2.Tilt = 90;
+ant2.TiltAxis = [0 1 0];
+
+<span class="comment">% Display the antenna pattern after rotation.</span>
+<span class="comment">% This may take a few minutes.  So be patient</span>
+ant2.pattern(fc, <span class="string">'Type'</span>, <span class="string">'Directivity'</span>);
+
+<span class="comment">% You can also save the pattern</span>
+[dir,az,el] = ant2.pattern(fc, <span class="string">'Type'</span>, <span class="string">'Directivity'</span>);
+</pre><img vspace="5" hspace="5" src="demo_antennas_03.png" alt=""> <h2 id="6">Plotting a cross-section</h2><p>Once the antenna pattern is stored in an array, you can plot cross sections as follows.  Suppose we want to plot the cross-section at an elevation angle of 0</p><pre class="codeinput"><span class="comment">% Elevation angle to plot</span>
+elPlot = 0;
+
+<span class="comment">% Find the index closest to the desired angle</span>
+[~, iel] = min(abs(el - elPlot));
+
+<span class="comment">% Plot using the polar plot.</span>
+<span class="comment">% Note the conversion to radians.  You also have to use the |rlim|</span>
+<span class="comment">% command to set the limits.</span>
+polarplot(deg2rad(az), dir(iel,:),<span class="string">'LineWidth'</span>, 3);
+rlim([-30, 15]);
+title(<span class="string">'Directivity (dB)'</span>);
+</pre><img vspace="5" hspace="5" src="demo_antennas_04.png" alt=""> <h2 id="7">Creating a custom antenna pattern</h2><p>While MATLAB has many common antennas, you will often need to load antenna data from a manufacturer or other source. Also, even when using MATLAB's antenna elements, it is often useful to compute the pattern once and store it. For this purpose, you can create a custom antenna element.  Here, we will create a custom antenna element with directivity pattern we just computed from the microstrip element.</p><pre class="codeinput">phasePattern = zeros(size(dir));
+ant3 = phased.CustomAntennaElement(<span class="keyword">...</span>
+    <span class="string">'AzimuthAngles'</span>, az, <span class="string">'ElevationAngles'</span>, el, <span class="keyword">...</span>
+    <span class="string">'MagnitudePattern'</span>, dir, <span class="keyword">...</span>
+    <span class="string">'PhasePattern'</span>, phasePattern);
+
+<span class="comment">% Plot the antenna pattern.</span>
+<span class="comment">% Note the format is slightly different since we are using</span>
+<span class="comment">% the pattern routine from the phased array toolbox</span>
+ant3.pattern(fc);
+</pre><img vspace="5" hspace="5" src="demo_antennas_05.png" alt=""> <h2 id="8">Interpolating the directivity in the custom pattern</h2><p>Once we have the antenna pattern, we can interpolate the values of the gain at other directions.   To illustrate we will plot the total path loss between a TX at the origin and an object traveling in a linear path along a 3D path.  First, we create and plot the path</p><pre class="codeinput"><span class="comment">% Define the linear path</span>
+npts = 100;
+xstart = [50 -50 0]';
+xend = [-50 50 50]';
+t = linspace(0,1,npts);
+X = xstart*(1-t) + xend*t;
+
+<span class="comment">% Plot the path in 3D along with the location of the TX at the origin</span>
+plot3(X(1,:), X(2,:), X(3,:), <span class="string">'Linewidth'</span>, 3);
+hold <span class="string">on</span>;
+plot3(0, 0, 0, <span class="string">'o'</span>, <span class="string">'Linewidth'</span>, 3);
+grid();
+hold <span class="string">off</span>;
+</pre><img vspace="5" hspace="5" src="demo_antennas_06.png" alt=""> <p>We compute the angle from the transmitter to the target. Remember to convert to degrees.</p><pre class="codeinput">[azpath, elpath, dist] = cart2sph(X(1,:), X(2,:), X(3,:));
+azpath = rad2deg(azpath);
+elpath = rad2deg(elpath);
+
+<span class="comment">% Compute the free space path loss along the path without</span>
+<span class="comment">% the antenna gain.  We can use MATLAB's built-in function</span>
+plOmni = fspl(dist, lambda);
+
+<span class="comment">% Compute the directivity using interpolation of the pattern.</span>
+<span class="comment">% We can use the  |ant3.resp| method for this purpose, but the</span>
+<span class="comment">% interpolation is not smooth.  So, we will do this by hand using</span>
+<span class="comment">% MATLAB's interpolation objects.</span>
+F = griddedInterpolant({el,az},dir);
+
+<span class="comment">% Compute the directivity using interpolation</span>
+dirPath = F(elpath,azpath);
+
+<span class="comment">% Compute the total path loss including the directivity</span>
+plDir = plOmni - dirPath;
+
+<span class="comment">% Plot the path loss over time.  Can you explain the</span>
+plot(t, [plOmni; plDir]', <span class="string">'Linewidth'</span>, 3);
+grid();
+set(gca, <span class="string">'Fontsize'</span>, 16);
+legend(<span class="string">'Omni'</span>, <span class="string">'With directivity'</span>, <span class="string">'Location'</span>, <span class="string">'SouthEast'</span>);
+xlabel(<span class="string">'Time'</span>);
+ylabel(<span class="string">'Path loss (dB)'</span>);
+</pre><img vspace="5" hspace="5" src="demo_antennas_07.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Demo:  Antennas 
+%
+% In this demo, we will illustrate some basic MATLAB tools for
+% computing and displaying antenna patterns.  Specifically, you will learn
+% to:
+% 
+% * Perform basic manipulations in spherical coordinates
+% * Define simple antenna patterns using the antenna toolbox
+% * Plot the antenna patterns in 2D and 3D
+% * Use the antenna patterns to compute gains along paths
+
+%% Spherical coordiantes.
+% We first demonstrate how to perform basic manipulations
+% in spherical coordinates.  
+%
+% For example, the code below
+% generate four random points in 3D converts them to 
+% spherical and then converts them.
+
+% Generate random data
+X = randn(3,4);
+
+% Compute spherical coordinates of a matrix of points
+% Note these are in radians!
+[az, el, rad] = cart2sph(X(1,:), X(2,:), X(3,:));
+
+% We can then convert Convert back
+[x,y,z] = sph2cart(az,el,rad);
+Xhat = [x; y; z];
+
+%% Simulation constants
+% For the remainder of the demo, we will use the following 
+% simulation constantsç
+%
+% Note:  In MATLAB, all values are in metric units m, s, Hz, etc.
+% Not GHz or MHz.
+fc = 2.3e9;     % Carrier frequency
+vp = physconst('lightspeed');  % speed of light
+lambda = vp/fc;   % wavelength
+
+%% Dipole antenna
+% Next, we will construct a simple dipole antenna.
+
+% Construct the antenna object
+ant = dipole(...
+    'Length', lambda/2,...
+    'Width', 0.01*lambda );
+
+% Display the antenna
+ant.show();
+
+%% Displaying the pattern
+% We can display the antenna pattern with the following command.
+ant.pattern(fc)
+
+
+%% Patch Element
+% 
+len = 0.49*lambda;
+groundPlaneLen = lambda;
+ant2 = patchMicrostrip(...
+    'Length', len, 'Width', 1.5*len, ...
+    'GroundPlaneLength', groundPlaneLen, ...
+    'GroundPlaneWidth', groundPlaneLen, ...
+    'Height', 0.01*lambda, ...
+    'FeedOffset', [0.25*len 0]);
+
+% Tilt the element so that the maximum energy is in the x-axis
+ant2.Tilt = 90;
+ant2.TiltAxis = [0 1 0];
+
+% Display the antenna pattern after rotation.
+% This may take a few minutes.  So be patient
+ant2.pattern(fc, 'Type', 'Directivity');
+
+% You can also save the pattern 
+[dir,az,el] = ant2.pattern(fc, 'Type', 'Directivity');
+
+%% Plotting a cross-section
+% Once the antenna pattern is stored in an array, you can
+% plot cross sections as follows.  Suppose we want to plot
+% the cross-section at an elevation angle of 0
+
+% Elevation angle to plot
+elPlot = 0;
+
+% Find the index closest to the desired angle
+[~, iel] = min(abs(el - elPlot));
+
+% Plot using the polar plot.
+% Note the conversion to radians.  You also have to use the |rlim|
+% command to set the limits.
+polarplot(deg2rad(az), dir(iel,:),'LineWidth', 3);
+rlim([-30, 15]);
+title('Directivity (dB)');
+
+
+%% Creating a custom antenna pattern
+% While MATLAB has many common antennas, you will often need
+% to load antenna data from a manufacturer or other source.
+% Also, even when using MATLAB's antenna elements, it is often
+% useful to compute the pattern once and store it. For this purpose,
+% you can create a custom antenna element.  Here, we will create
+% a custom antenna element with directivity pattern we just 
+% computed from the microstrip element.
+phasePattern = zeros(size(dir));
+ant3 = phased.CustomAntennaElement(...
+    'AzimuthAngles', az, 'ElevationAngles', el, ...
+    'MagnitudePattern', dir, ...
+    'PhasePattern', phasePattern);
+
+% Plot the antenna pattern.
+% Note the format is slightly different since we are using
+% the pattern routine from the phased array toolbox
+ant3.pattern(fc);
+
+%% Interpolating the directivity in the custom pattern
+% Once we have the antenna pattern, we can interpolate the 
+% values of the gain at other directions.   To illustrate we will
+% plot the total path loss between a TX at the origin and an object
+% traveling in a linear path along a 3D path.  First,
+% we create and plot the path
+
+% Define the linear path
+npts = 100;
+xstart = [50 -50 0]'; 
+xend = [-50 50 50]';
+t = linspace(0,1,npts);
+X = xstart*(1-t) + xend*t;
+
+% Plot the path in 3D along with the location of the TX at the origin
+plot3(X(1,:), X(2,:), X(3,:), 'Linewidth', 3);
+hold on;
+plot3(0, 0, 0, 'o', 'Linewidth', 3);
+grid();
+hold off;
+
+%%
+% We compute the angle from the transmitter to the target.
+% Remember to convert to degrees.
+[azpath, elpath, dist] = cart2sph(X(1,:), X(2,:), X(3,:));
+azpath = rad2deg(azpath);
+elpath = rad2deg(elpath);
+
+% Compute the free space path loss along the path without 
+% the antenna gain.  We can use MATLAB's built-in function
+plOmni = fspl(dist, lambda);
+
+% Compute the directivity using interpolation of the pattern.
+% We can use the  |ant3.resp| method for this purpose, but the
+% interpolation is not smooth.  So, we will do this by hand using
+% MATLAB's interpolation objects.
+F = griddedInterpolant({el,az},dir);
+
+% Compute the directivity using interpolation
+dirPath = F(elpath,azpath);
+
+% Compute the total path loss including the directivity
+plDir = plOmni - dirPath;
+
+% Plot the path loss over time.  Can you explain the 
+plot(t, [plOmni; plDir]', 'Linewidth', 3);
+grid();
+set(gca, 'Fontsize', 16);
+legend('Omni', 'With directivity', 'Location', 'SouthEast');
+xlabel('Time');
+ylabel('Path loss (dB)');
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
