@@ -1,21 +1,21 @@
-%% Demo:  Antennas 
+%% Demo:  Computing and Displaying Antenna Patterns
 %
 % In this demo, we will illustrate some basic MATLAB tools for
 % computing and displaying antenna patterns.  Specifically, you will learn
 % to:
 % 
 % * Perform basic manipulations in spherical coordinates
-% * Define simple antenna patterns using the antenna toolbox
-% * Plot the antenna patterns in 2D and 3D
-% * Use the antenna patterns to compute gains along paths
+% * Define simple antennas using MATLAB's antenna toolbox
+% * Plot antenna patterns in 2D and 3D
+% * Use the antenna patterns and free-space path loss functions to 
+%   compute the path loss along a trajectory
 
 %% Spherical coordiantes.
 % We first demonstrate how to perform basic manipulations
 % in spherical coordinates.  
 %
-% For example, the code below
-% generate four random points in 3D converts them to 
-% spherical and then converts them.
+% For example, the code below generates four random points in 3D 
+% and converts them to spherical coordinates
 
 % Generate random data
 X = randn(3,4);
@@ -24,13 +24,13 @@ X = randn(3,4);
 % Note these are in radians!
 [az, el, rad] = cart2sph(X(1,:), X(2,:), X(3,:));
 
-% We can then convert Convert back
+% We can then convert back
 [x,y,z] = sph2cart(az,el,rad);
 Xhat = [x; y; z];
 
 %% Simulation constants
 % For the remainder of the demo, we will use the following 
-% simulation constantsç
+% simulation constants
 %
 % Note:  In MATLAB, all values are in metric units m, s, Hz, etc.
 % Not GHz or MHz.
@@ -39,7 +39,7 @@ vp = physconst('lightspeed');  % speed of light
 lambda = vp/fc;   % wavelength
 
 %% Dipole antenna
-% Next, we will construct a simple dipole antenna.
+% For a first antenna, we construct a simple dipole.
 
 % Construct the antenna object
 ant = dipole(...
@@ -55,7 +55,9 @@ ant.pattern(fc)
 
 
 %% Patch Element
-% 
+% We now consider a more complex antenna.  The antenna toolbox can analyze 
+% a number of antennas in use.  However, once the antenna is more complex,
+% you will start to notice that the analysis becomes very slow.
 len = 0.49*lambda;
 groundPlaneLen = lambda;
 ant2 = patchMicrostrip(...
@@ -92,7 +94,7 @@ elPlot = 0;
 % command to set the limits.
 polarplot(deg2rad(az), dir(iel,:),'LineWidth', 3);
 rlim([-30, 15]);
-title('Directivity (dB)');
+title('Directivity (dBi)');
 
 
 %% Creating a custom antenna pattern
@@ -147,12 +149,13 @@ elpath = rad2deg(elpath);
 plOmni = fspl(dist, lambda);
 
 % Compute the directivity using interpolation of the pattern.
-% We can use the  |ant3.resp| method for this purpose, but the
-% interpolation is not smooth.  So, we will do this by hand using
-% MATLAB's interpolation objects.
+% We can use the ant3.resp method for this purpose, but the
+% interpolation is not smooth.  So, we will do this using
+% MATLAB's interpolation objects.   First, we create the 
+% interpolation object.
 F = griddedInterpolant({el,az},dir);
 
-% Compute the directivity using interpolation
+% Then, we compute the directivity using the object
 dirPath = F(elpath,azpath);
 
 % Compute the total path loss including the directivity
