@@ -13,7 +13,7 @@ These are the first lectures that I will add to this short course
 
 * Basics of Antennas and Free-space Propagation 
     * Lecture: [[PDF]](./lectures/Unit01_Antennas.pdf) [[PPT]](./lectures/Unit01_Antennas.pptx) 
-    * Demo: Calculating and displaying antenna patterns [[PDF]](./antennas/demo_antenna.pdf) [[Matlab]](./antennas/demo_antenna.m)
+    * Demo: Calculating and displaying antenna patterns [[PDF]](./antennas/demo_antennas.pdf) [[Matlab]](./antennas/demo_antennas.m)
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./antennas/lab_uav_antenna_partial.m)
 * Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
