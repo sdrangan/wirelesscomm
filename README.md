@@ -17,7 +17,8 @@ These are the first lectures that I will add to this short course
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./antennas/lab_uav_antenna_partial.m)
 * Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
+    * Demo: Propagation and Rate Modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
 * Multipath Fading
 * Multiple Antennas and Beamforming
 * Introduction to MIMO 
-wer
+
