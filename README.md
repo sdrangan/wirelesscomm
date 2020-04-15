@@ -19,6 +19,9 @@ These are the first lectures that I will add to this short course
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
     * Demo: Propagation and Rate Modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
 * Multipath Fading
+    * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
+    * Demo: Simulating fading [[PDF]](./fading/demo_fading.pdf) [[Matlab]](./fading/demo_fading.m)
+    * In-class exercises: [[PDF]](./fading/fading_inclass_partial.pdf) [[Matlab]](./fading/fading_inclass_partial.m)
 * Multiple Antennas and Beamforming
 * Introduction to MIMO 
 
