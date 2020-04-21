@@ -16,6 +16,7 @@ tau = 200e-9;    % timing error
 % Use 1024 frequency points
 
 
+
 %% Up and down-conversion, Problem 2
 % Suppose a link has the following parameters:
 fc = 37e9;  % carrier freq 

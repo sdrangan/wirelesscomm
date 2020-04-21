@@ -17,12 +17,13 @@ These are the first lectures that I will add to this short course
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./antennas/lab_uav_antenna_partial.m)
 * Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
-    * Demo: Propagation and Rate Modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
+    * Demo: Propagation and rate modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
     * Lab:  Propagation modeling from ray tracing data [[PDF]](./propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./propagation/lab_prop_modeling_partial.m)
 * Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * Demo: Simulating fading [[PDF]](./fading/demo_fading.pdf) [[Matlab]](./fading/demo_fading.m)
     * In-class exercises: [[PDF]](./fading/fading_inclass_partial.pdf) [[Matlab]](./fading/fading_inclass_partial.m)
+    * Lab:  5G channel sounding with Doppler [[PDF]](./fading/partial/lab_chan_sounder.pdf) [[Matlab]](./fading/partial/lab_chan_sounder.m)
 * Multiple Antennas and Beamforming
 * Introduction to MIMO 
 
