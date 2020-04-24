@@ -19,6 +19,7 @@ These are the first lectures that I will add to this short course
 * Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
     * Demo: Propagation and rate modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
+    * Problems:  [[PDF]](./propagation/prob/prob_propagation.pdf) [[Latex]](./propagation/prob/prob_propagation.tex)
     * Lab:  Propagation modeling from ray tracing data [[PDF]](./propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./propagation/lab_prop_modeling_partial.m)
 * Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 

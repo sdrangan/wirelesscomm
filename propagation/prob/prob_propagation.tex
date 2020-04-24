@@ -1,0 +1,302 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mdframed}
+\usepackage{mcode}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\GV{Guo and Verd{\'u}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\dbf}{\mathbf{d}}
+\newcommand{\ebf}{\mathbf{e}}
+\newcommand{\gbf}{\mathbf{g}}
+\newcommand{\hbf}{\mathbf{h}}
+\newcommand{\pbf}{\mathbf{p}}
+\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
+\newcommand{\qbf}{\mathbf{q}}
+\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
+\newcommand{\rbf}{\mathbf{r}}
+\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
+\newcommand{\sbf}{\mathbf{s}}
+\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
+\newcommand{\utildebf}{\tilde{\mathbf{u}}}
+\newcommand{\vbf}{\mathbf{v}}
+\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
+\newcommand{\wbf}{\mathbf{w}}
+\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
+\newcommand{\xbfbar}{\overline{\mathbf{x}}}
+\newcommand{\ybf}{\mathbf{y}}
+\newcommand{\zbf}{\mathbf{z}}
+\newcommand{\zbfbar}{\overline{\mathbf{z}}}
+\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Ebf}{\mathbf{E}}
+\newcommand{\Gbf}{\mathbf{G}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\Kbf}{\mathbf{K}}
+\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\mathbf{Q}}
+\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\mathbf{S}}
+\newcommand{\Ubf}{\mathbf{U}}
+\newcommand{\Vbf}{\mathbf{V}}
+\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Ybf}{\mathbf{Y}}
+\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\tran}{^{\text{\sf T}}}
+\newcommand{\herm}{^{\text{\sf H}}}
+
+
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+\begin{document}
+
+\title{Problems:  Non-LOS Propagation and Link Budget Analysis\\
+EL-GY 6023. Wireless Communications}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+\begin{enumerate}
+
+\item \emph{Noise:}
+Suppose a receiver consists of an low noise amplifier with a gain of 30 dB
+and noise figure of 2 dB, followed by a second stage of amplification of
+another 20 dB with a noise figure of 10 dB.
+\begin{enumerate}[label=(\alph*)]
+\item What is the total noise figure and gain of the system?
+\item Suppose a 10 dB attenuator is placed at the input of the LNA.
+What is the resulting overall gain and noise figure?
+\item What if the attenuator is placed at the output of the LNA?
+\end{enumerate}
+
+\item \emph{SINR:} 
+Suppose when a transmitter, TX1, sends data to a receiver RX
+without interference, the SNR is 10 dB.  Now suppose that TX2
+starts transmitting resulting in interference.
+Suppose TX2 transmits at the same power as TX1 and the path loss from
+TX2 to RX is 5 dB greater than the path loss from TX1 to RX.
+What is the resulting SINR from TX1 to RX when TX2 is transmitting?
+
+
+\item \emph{Reflection loss:}  Let $\Gamma$ be the reflection coefficient from
+an interface going from a characteristic impedance $\eta_1$ to $\eta_2$ and let 
+$\Gamma'$ be the reflection coefficient from
+ $\eta_2$ to $\eta_1$.  Show that if the angle of incidence is
+zero $\theta_i=0$, $\Gamma = -\Gamma'$.  
+
+
+\item \emph{SNR requirements:} 
+A signal is received at power of $P = $-100 dBm and the noise power density
+(including the noise figure) is $N_0 = $ -170 dBm/Hz.
+If a transmission of $b=100$ bits requires an $E_b/N_0$
+of 6~dB, what is the time to transmit the packet?
+
+\item \emph{Simulating a statistical model:}  
+Write short MATLAB code to do the following.  You do not need to run the code,
+just write the code.
+\begin{enumerate}[label=(\alph*)]
+\item Drop \mcode{nrx=1000} RX locations randomly in a circle of radius \mcode{radius = 100}m.
+\item Assuming the transmitter is at the origin at a height \mcode{htx=2}m higher
+than the RX, compute the distances \mcode{dist} to the RXs.
+\item Assuming a path loss model,
+\[
+    PL = 32.4 + 14.3\log_{10}(d) + 20\log_{10}(f_c)  + \xi,
+    \quad \xi \sim \mathcal{N}(0,\sigma^2),
+\]
+generate random path losses to the RXs.  Assume $\sigma = 4$ and 
+$f_c = 2.3$ GHz.
+\item Compute the SNR, $E_s/N_0$, to the RX.  State all the parameters that you would need.
+\end{enumerate}
+
+
+\item \emph{Simulating a statistical model:}
+Consider an indoor propagation model where the path loss is,
+\[
+    PL = \mathrm{FSPL}(d) + L_0 N, \quad N \sim \mathrm{Poisson}(\alpha d),
+\]
+where $d$ is the distance between the TX and RX,
+$\mathrm{FSPL}(d)$ is the free-space path loss, $N$ is 
+the number of walls between a transmitter and receiver and $N$ is modeled as 
+a Poisson random variable where $\alpha$ is average number of walls
+per meter of distance.  
+Write a MATLAB function 
+\begin{lstlisting}
+    function pl = indoorPL(d, ... )
+\end{lstlisting}
+to generate random path loss values as function of a vector of distances.  
+State all the other parameters this function needs.  You may assume you have
+access to a function \mcode{fspl(lambda,d)} for the free-space path loss.
+  
+\item \emph{Outage probability:} Suppose that a link has the following properties:
+\begin{itemize}
+\item TX power, $P_{tx} =$ 20 dBm
+\item Bandwidth, $W =$ 20 MHz
+\item Noise power density (including noise figure) $N_0=$ -170 dBm/Hz.
+\end{itemize}
+Answer the following:
+\begin{enumerate}[label=(\alph*)]
+\item What is the maximum path loss, $PL_{max}$, that the link can
+have to meet an SNR target of 10 dB?
+\item Suppose that the path loss is lognormally distributed with
+\[
+    PL = PL_0 + \xi, \quad \xi \sim {\mathcal N}(0,\sigma^2),
+\]
+where $PL_0 = $ 110 dB and $\sigma$ = 8~dB.
+What is the outage probability $P_{out}=\Pr(PL \geq PL_{max})$
+using the value $PL_{max}$ from part (a)?
+Your answer should have
+a $Q$-function.  You can evaluate it with MATLAB's function \mcode{qfunc}.
+
+\item A common model for indoor path loss is given by
+\[
+    PL = PL_0 + \xi + DN, \quad \xi \sim {\mathcal N}(0,\sigma^2),
+\]
+where $N$ is the number of walls that the signal must pass through
+and $D$ is the loss per wall.  Suppose that we model the number of
+walls as a random variable with distribution:
+\[
+    P(N=n) = \begin{cases}
+        0.5 & \mbox{if } n=0 \\
+        0.3 & \mbox{if } n=1 \\
+        0.2 & \mbox{if } n=2 \\
+        0 & \mbox{else, }
+        \end{cases}
+\]
+and the loss per wall is $D=$ 7~dB.
+What is the outage probability $P_{out}$?
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+
+
