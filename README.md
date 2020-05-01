@@ -26,6 +26,11 @@ These are the first lectures that I will add to this short course
     * Demo: Simulating fading [[PDF]](./fading/demo_fading.pdf) [[Matlab]](./fading/demo_fading.m)
     * In-class exercises: [[PDF]](./fading/fading_inclass_partial.pdf) [[Matlab]](./fading/fading_inclass_partial.m)
     * Lab:  5G channel sounding with Doppler [[PDF]](./fading/partial/lab_chan_sounder.pdf) [[Matlab]](./fading/partial/lab_chan_sounder.m)
+* Diversity
+* Capacity of Fading Channels and MAC-Layer Concepts
 * Multiple Antennas and Beamforming
+    * Lecture: [[PDF]](./lectures/Unit06_Beamforming.pdf) [[PPT]](./lectures/Unit06_Beamforming.pptx) 
+    * Demo: Visualizing and simualting arrays [[PDF]](./beamforming/demo_bf.pdf) [[Matlab]](./beamforming/demo_bf.m)
+    * In-class exercises: [[PDF]](./beamforming/bf_inclass_partial.pdf) [[Matlab]](./beamforming/bf_inclass_partial.m)
 * Introduction to MIMO 
 
