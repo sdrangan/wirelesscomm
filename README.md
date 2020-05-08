@@ -32,5 +32,6 @@ These are the first lectures that I will add to this short course
     * Lecture: [[PDF]](./lectures/Unit06_Beamforming.pdf) [[PPT]](./lectures/Unit06_Beamforming.pptx) 
     * Demo: Visualizing and simualting arrays [[PDF]](./beamforming/demo_bf.pdf) [[Matlab]](./beamforming/demo_bf.m)
     * In-class exercises: [[PDF]](./beamforming/bf_inclass_partial.pdf) [[Matlab]](./beamforming/bf_inclass_partial.m)
+    * Lab:  5G NR downlink simulation with beamforming [[PDF]](./beamforming/partial/lab_pdsch_bf.pdf) [[Matlab]](./beamforming/partial/lab_pdsch_bf.m)
 * Introduction to MIMO 
 
