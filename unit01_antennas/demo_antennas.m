@@ -7,6 +7,7 @@
 % * Perform basic manipulations in spherical coordinates
 % * Define simple antennas using MATLAB's antenna toolbox
 % * Plot antenna patterns in 2D and 3D
+% * Compute free-space path loss
 % * Use the antenna patterns and free-space path loss functions to 
 %   compute the path loss along a trajectory
 
@@ -35,7 +36,7 @@ Xhat = [x; y; z];
 % Note:  In MATLAB, all values are in metric units m, s, Hz, etc.
 % Not GHz or MHz.
 fc = 2.3e9;     % Carrier frequency
-vp = physconst('lightspeed');  % speed of light
+vp = physconst('lightspeed'); % speed of light
 lambda = vp/fc;   % wavelength
 
 %% Dipole antenna
@@ -95,6 +96,22 @@ elPlot = 0;
 polarplot(deg2rad(az), dir(iel,:),'LineWidth', 3);
 rlim([-30, 15]);
 title('Directivity (dBi)');
+
+%% Computing free-space path loss
+% Suppose we want to compute the omni-directional free-space path loss,
+% meaning the path loss without antenna gain at some distance d:
+
+d = 500;  % distance in meters
+
+% We can compute the FSPL manually from Friis' law
+% Note the minus sign
+plOmni1 = -20*log10(lambda/4/pi/d);
+
+% Or, we can use MATLAB's built in function:
+plOmni2 = fspl(d, lambda);
+
+fprintf(1,'Omni PL - manual: %7.2f\n', plOmni1);
+fprintf(1,'Omni PL - MATLAB: %7.2f\n', plOmni2);
 
 
 %% Creating a custom antenna pattern
