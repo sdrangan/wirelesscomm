@@ -20,7 +20,7 @@ of the semester.  Other topics may be added at the end depending on time.
 * Course Introduction
 * Unit 1.  Basics of Antennas and Free-space Propagation 
     * Lecture: [[PDF]](./lectures/Unit01_Antennas.pdf) [[PPT]](./lectures/Unit01_Antennas.pptx) 
-    * [Lecture videos]((./unit01_antennas/online.md)
+    * [Lecture videos](./unit01_antennas/readme.md)
     * Demo: Calculating and displaying antenna patterns [[PDF]](./unit01_antennas/demo_antennas.pdf) [[Matlab]](./unit01_antennas/demo_antennas.m)
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./unit01_antennas/lab_uav_antenna_partial.m)
