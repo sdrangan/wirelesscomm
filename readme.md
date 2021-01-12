@@ -1,10 +1,11 @@
 # ECE-GY 6023.  Introduction to Wireless Communications
 
-This repository is currently a collection of lecture material for
-ECE-GY 6023 Introduction to Wireless Communications at NYU taught by
-Prof. Sundeep Rangan.  The class is intended to be for MS and PhD students in
-Electrical Engineering.  Right now, only a small amount of material is available,
-but we are hoping to add more over the course of the semester.
+This repository provides instructional material for the
+graduate wireless communications, ECE-GY 6023, at New York University
+taught by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
+
+Anyone is free to use and copy this material (at their own risk!).
+But, please cite the material if you use the material in your own class.
 
 # Pre-requisites
 
@@ -12,12 +13,25 @@ The course assumes you are familiar with digital communications at the graduate 
 
 Additionally, some lecture notes (and problems to be added later) assume you have access to MATLAB along with the communications, phased array and antenna toolboxes.
 
+## Feedback
+
+Any feedback is welcome.  If you find errors, have ideas for improvements,
+or want to voice any other thoughts, [create an issue](https://help.github.com/articles/creating-an-issue/)
+and we will try to get to it.
+Even better, fork the repository, make the changes yourself and
+[create a pull request](https://help.github.com/articles/about-pull-requests/)
+and we will try to merge it in.  See the [excellent instructions](https://github.com/ishjain/learnGithub/blob/master/updateMLrepo.md)
+from the former TA Ish Jain.
+
+
 # Lecture Sequence
 The tentative plan for the lectures are below.  Right now, only a few lectures
 have full material.  We will be hoping to add to this material over the course
 of the semester.  Other topics may be added at the end depending on time.
 
 * Course Introduction
+    * Lecture: [[PDF]](./lectures/CourseAdmin.pdf) [[PPT]](./lectures/CourseAdmin.pptx) 
+    * Lecture video:  [[YouTube]](https://youtu.be/DZLp12GCHow)
 * Unit 1.  Basics of Antennas and Free-space Propagation 
     * Lecture: [[PDF]](./lectures/Unit01_Antennas.pdf) [[PPT]](./lectures/Unit01_Antennas.pptx) 
     * [Lecture videos](./unit01_antennas/readme.md)
