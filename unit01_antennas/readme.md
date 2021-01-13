@@ -10,7 +10,7 @@ Slides:  [[PDF]](../lectures/Unit01_Antennas.pdf) [[Powerpoint]](../lectures/Uni
     * Problem 2 in in-class exercises: [[MATLAB live]](./antennas_inclass.mlx)  [[PDF]](./antennas_inclass.pdf) 
 * Basics of Antennas:  [[YouTube]](https://youtu.be/lhAkkodcftc)
     * Problem 3 in in-class exercises: [[MATLAB live]](./antennas_inclass.mlx)  [[PDF]](./antennas_inclass.pdf) 
-* Free-space Propagation:  To be uploaded
+* Free-space Propagation:  [[YouTube]](https://youtu.be/uhtASfGPbz4)
     * Problem 4 in in-class exercises: [[MATLAB live]](./antennas_inclass.mlx)  [[PDF]](./antennas_inclass.pdf) 
 
 Solutions:  [[MATLAB Live]](./antennas_inclass_soln.mlx)  [[PDF]](./antennas_inclass_soln.pdf)  
