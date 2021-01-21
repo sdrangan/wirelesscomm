@@ -7,7 +7,7 @@ taught by [Sundeep Rangan](http://wireless.engineering.nyu.edu/sundeep-rangan/):
 Anyone is free to use and copy this material (at their own risk!).
 But, please cite the material if you use the material in your own class.
 
-# Pre-requisites
+## Pre-requisites
 
 The course assumes you are familiar with digital communications at the graduate level.  There are many resources for digital communications, including some lecture notes I created for the [NYU class](https://github.com/sdrangan/digitalcomm).
 
@@ -24,7 +24,7 @@ and we will try to merge it in.  See the [excellent instructions](https://github
 from the former TA Ish Jain.
 
 
-# Lecture Sequence
+## Lecture Sequence
 The tentative plan for the lectures are below.  Right now, only a few lectures
 have full material.  We will be hoping to add to this material over the course
 of the semester.  Other topics may be added at the end depending on time.

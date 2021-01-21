@@ -11,6 +11,7 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{enumitem}
+\usepackage{siunitx}
 \usetikzlibrary{shapes,arrows}
 \usepackage{mdframed}
 \usepackage{mcode}
@@ -177,7 +178,7 @@
 
 \begin{document}
 
-\title{Problems: Antennas and Free-Space Propagation\\
+\title{Problem Solutions:  Antennas and Free-Space Propagation\\
 EL-GY 6023. Wireless Communications}
 \author{Prof.\ Sundeep Rangan}
 \date{}
@@ -188,28 +189,17 @@ In all the problems below, unless specified otherwise, $\phi$ is the
 azimuth angle and $\theta$ is elevation angle.
 
 \begin{enumerate}
-\item \emph{EM wave}:  Suppose the E-field is,
+\item \emph{EM wave}:  Suppose an EM plane wave has an E-field
 \[
     \Ebf(x,y,z,t) = E_0 \ebf_y \cos(2\pi f t - kx).
 \]
 \begin{enumerate}[label=(\alph*)]
   \item What is direction of motion?
-  \item If the average power flux is $10^{-8}$ mW/m$^2$, what is $E_0$?
-   Assume the characteristic impedance is $\eta_0 = 377 \Omega$.
-  \item If the frequency is $f=$ 1.5 GHz, what is $k$?
+  \item If the average power flux density is $10^{-8}\, \si{mW/m^2}$, what is $E_0$?
+   Assume the characteristic impedance is $\eta_0 = \SI{377}{\ohm}$.
+  \item If the frequency is $f=$ \SI{1.5}{GHz}, what is $k$?
   What are the units of $k$?
 \end{enumerate}
-
-\item \emph{EM polarization}:  An EM plane wave has
-a power flux of $10^{-8}$ mW/m$^2$ in a horizontal polarization (along the $x$-axis)
-and $2(10)^{-8}$ mW/m$^2$ in a vertical polarization (along the $y$-axis).
-Assume the characteristic impedance is $\eta_0 = 377 \Omega$.
-\begin{enumerate}[label=(\alph*)]
-  \item What is combined $E$-field value and its direction?
-  \item What is the direction of motion?
-  \item What is the total power flux?
-\end{enumerate}
-
 
 \item \emph{dBm to linear conversions:}
 \begin{enumerate}[label=(\alph*)]
@@ -218,81 +208,92 @@ Assume the characteristic impedance is $\eta_0 = 377 \Omega$.
 \end{enumerate}
 
 
-\item \emph{Spherical-cartesian conversions:}
-\begin{enumerate}[label=(\alph*)]
-  \item Convert $(r,\phi,\theta)=(2,45^\circ,30^\circ)$ to $(x,y,z)$.
-  \item Convert $(x,y,z) = (1,2,3)$ to $(r,\phi,\theta)$.
-  \item Convert $(x,y,z) = (1,-2,3)$ to $(r,\phi,\theta)$.
-\end{enumerate}
 
-\item \emph{Rotation matrices}:  The \emph{rotation matrix}
-$R(\theta,\phi)$ is the $3 \times 3$ matrix such that $R(\theta,\phi)\rbf$ rotates
-the vector $\rbf$ by an angle pair $(\theta,\phi)$.  
-You can read more about this on wikipedia or other sources.
-\begin{enumerate}[label=(\alph*)]
-  \item Find the entries of $R(\theta,\phi)$.
-  \item Show $R(\theta,\phi)$ is \emph{orthogonal} meaning
-  $R(\theta,\phi)^{-1}=R(\theta,\phi)\tran$.
-  \item Is
+\item \emph{Spherical-cartesian conversions:}  When a transmitter is at the origin,
+its E-field in the far field can often be represented as,
 \[
-    R(\theta_1,\phi_1)R(\theta_2,\phi_2) = R(\theta_2,\phi_2)R(\theta_1,\phi_1)?
+    \Ebf = E_\theta \ebf_\theta + E_\phi \ebf_\phi,
 \]
-That is, do the order of rotations matter?
-Prove or find a counter-example.
-\end{enumerate}
+where $\ebf_\theta$ and $\ebf_\phi$ are the basis vectors in elevation and azimuth direction.
+Complete the following MATLAB function that takes a $1\times 3$ position vector
+\mcode{pos} and $n \times 1$ values of $E_\theta$ and $E_\phi$ and returns the
+an $n \times 3$ matrix \mcode{E} representing the E-field values in cartesian coordinates.
+You may use any built in MATLAB functions.  Be careful whether the methods use degrees
+or radians.
+\begin{lstlisting}
+    function E = convert(Etheta, Ephi, pos)
+\end{lstlisting}
 
+
+\item \emph{Rotation matrices}:  In wireless systems, we often need to consider antennas that
+can be in arbitrary rotations.  One way of specifying the orientation of an object
+is through its so-called \emph{Euler} angles $(\alpha,\beta,\gamma)$ or
+\emph{yaw, pitch} and \emph{roll}.  Let $R(\alpha,\beta,\gamma)$ be the rotation matrix
+for a given set of Euler angles.  You can find the formulae for $R(\alpha,\beta,\gamma)$
+in any reference such as wikipedia.
+\begin{enumerate}[label=(\alph*)]
+%  \item   Write a simple MATLAB function
+%  as follows that computes the rotation matrix given the Euler angles in degrees.
+%\begin{lstlisting}
+%    function rot = rotMatrix(yaw,pitch,roll)
+%\end{lstlisting}
+
+\item Given elevation and azimuth angles $(\theta,\phi)$ find $(\alpha,\beta,\gamma)$
+with $\gamma=0$ that rotates the $x$-axis to point in $(\theta,\phi)$.
+\item Is $R(\alpha,0,0)^{-1} = R(-\alpha,0,0)$?  Explain.
+\item Is $R(\alpha,\beta,0)^{-1} = R(-\alpha,-\beta,0)$?  Explain.
+\end{enumerate}
 
 \item \emph{Angular areas:}  Find the angular area in steradians of
-following sets of angles:
+following sets of angles where $\phi$ is the azimuth angle and $\theta$ is the elevation angles
+in degrees:
 \begin{enumerate}[label=(\alph*)]
-  \item $A_1 = \left\{ (\phi,\theta) ~ | ~ \phi \in [-30,30],~ \theta \in [-90,90]\right\}$
-  \item $A_2 = \left\{ (\phi,\theta) ~|~ \phi \in [-30,30], ~ \theta \in [-45,45]\right\}$
+  \item $A_1 = \left\{ (\phi,\theta) ~ | ~ \phi \in [-\ang{30},\ang{30}],~ \theta \in [-\ang{90},\ang{90}]\right\}$
+  \item $A_2 = \left\{ (\phi,\theta) ~|~ \phi \in [-\ang{30},\ang{30}],~ \theta \in [-\ang{45},\ang{45}]\right\}$
 \end{enumerate}
-
 \item \emph{Directivity:}  Suppose an antenna radiates power uniformly in
-the angular beam $\phi \in [-30,30], \theta \in [-45,45]$ and radiates
-no power at other angles.  What is the directivity of the antenna?
+the angular beam $\phi \in [-\ang{30},\ang{30}]$, and $\theta \in [-\ang{45},\ang{45}]$,
+and radiates no power at other angles.  What is the maximum directivity of the antenna in dBi?
+You can use the results from the previous problem.
 
-\item \emph{Radiation intensity:}  A 170 cm x 40 cm object
-(roughly the size of a human) is 800m from a base station.
-If the antenna transmits 250~mW isotropically, how much power
+
+\item \emph{Radiation intensity:}  A \SI{170}{cm} $\times$ \SI{40}{cm} object
+(roughly the size of a human) is \SI{800}{m} from a base station.
+If the base station antenna transmits \SI{250}{mW} isotropically, how much power
 reaches the human?  Use reasonable approximations that the human is far from the
 transmitter.
 
-\item \emph{Radiation integration:}  The radiation density for some antenna is,
+\item \emph{Radiation integration:}  Suppose the  radiation intensity is
 \[
-    U(\phi,\theta) = A\cos^2(\phi), \quad A = 100 \mbox{mW/sr}.
+  U(\phi,\theta) = A\cos^2(\theta), \quad A = 10\,\si{mW/sr},
 \]
-\begin{enumerate}[label=(\alph*)]
-\item What is the total radiated power in mW and dBm?
-\item What is the directivity of the antenna in linear scale and in dBi?
-\end{enumerate}
+where $(\phi,\theta)$ are the azimuth and elevation angles.
+find the total radiated power in dBm and maximum directivity in dBi.
+You can look up any integrals you need.
+
 
 \item \emph{Numerically integrating patterns:}
-Write a short MATLAB function,
-\begin{lstlisting}
-    function [totPow, dir] = powerDirectivity(az,el,E,eta)
-\end{lstlisting}
-that computes the total power and directivity as a function of the $E$-field
-values.  The E field is specified as a complex matrix \mcode{E(i,j)}
-at angles \mcode{az(i),el(j)}.  You can assume that the angles are uniformly
-spaced over  the total angular space.   The total power output
- \mcode{totPow} should be a
-scalar representing the total radiated power in dBm and the directivity output
-should be \mcode{dir(i,j)} should be a matrix.
+Suppose we are given the radiation intensity $U(\theta,\phi)$ at discrete points,
+$(\theta_i,\phi_j)$ where
+$\theta_i$, $i=1,\ldots,M$ is uniformly spaced on $[-\pi/2,\pi/2]$
+and $\phi_j$, $j=1,\ldots,N$ is uniformly spaced on $[-\pi,\pi]$.
+Assume $(\theta, \phi)$ are elevation and azimuth angles.  Write a short MATLAB function
+to compute the radiated power $P_{\rm rad}$ and directivity $D(\theta_i,\phi_j)$
+from a matrix of values $U(\theta_i,\phi_j)$.
 
-\item \emph{Friis' Law}:  A transmitter radiates 100 mW at a carrier $f_c = 2.1$ GHz
-with a directional gain of $G_t = 10$ dBi.
-Suppose the receiver is $d = 200$ m from the transmitter and the path is free space.
-What is the received power if:
+
+
+\item \emph{Friis' Law}:  A transmitter radiates \SI{15}{dBm} at a carrier $f_c =$ \SI{2.1}{GHz}
+with a directional gain of $G_t = 9$\,\si{dBi}.
+Suppose the receiver is $d =$ \SI{200}{m} from the transmitter and the path is free space.
+What is the received power in dBm if:
 \begin{enumerate}[label=(\alph*)]
-\item The effective received aperture is 1 cm$^2$.
-\item The receiver gain is $G_r = 5$ dBi.
+\item The effective received aperture is \SI{1}{cm^2}.
+\item The receiver gain is $G_r =$ \SI{5}{dBi}.
 \end{enumerate}
+
 
 \end{enumerate}
 
 \end{document}
-
-
 
