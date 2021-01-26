@@ -40,9 +40,9 @@ of the semester.  Other topics may be added at the end depending on time.
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./unit01_antennas/lab_uav_antenna_partial.m)
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
-    * Demo: Propagation and rate modeling [[PDF]](./propagation/demo_path_loss_model.pdf) [[Matlab]](./propagation/demo_path_loss_model.m)
-    * Problems:  [[PDF]](./propagation/prob/prob_propagation.pdf) [[Latex]](./propagation/prob/prob_propagation.tex)
-    * Lab:  Propagation modeling from ray tracing data [[PDF]](./propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./propagation/lab_prop_modeling_partial.m)
+    * Demo: Propagation and rate modeling [[PDF]](./unit02_propagation/demo_path_loss_model.pdf) [[Matlab]](./unit02_propagation/demo_path_loss_model.m)
+    * Problems:  [[PDF]](./unit02_propagation/prob/prob_propagation.pdf) [[Latex]](./unit02_propagation/prob/prob_propagation.tex)
+    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./unit02_propagation/lab_prop_modeling_partial.m)
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * Demo: Simulating fading [[PDF]](./fading/demo_fading.pdf) [[Matlab]](./fading/demo_fading.m)
