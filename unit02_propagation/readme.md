@@ -9,9 +9,9 @@ Slides:  [[PDF]](../lectures/Unit02_Propagation.pdf) [[Powerpoint]](../lectures/
     * Problem 1 in in-class exercises: [[MATLAB live]](./propagation_inclass.mlx)  [[PDF]](./propagation_inclass.pdf) 
 * Communication Requirements and Link-Budget Analysis:  [[YouTube]](https://youtu.be/EbvB83iUeBE)
     * Problem 2 in in-class exercises: [[MATLAB live]](./propagation_inclass.mlx)  [[PDF]](./propagation_inclass.pdf) 
-* Non-LOS Propagation:  TBD
-    * Problem at the end section in the [[Lecture]](../lectures/Unit02_Propagation.pdf)
-* Statistical Models for Path Loss:  TBD
+* Non-LOS Propagation:  [[YouTube]](https://youtu.be/laFaOXLgzMk)
+    * Problem and solution at the end section in the [[Lecture]](../lectures/Unit02_Propagation.pdf)
+* Statistical Models for Path Loss:  [[YouTube]](https://youtu.be/iG0uOfMhv-A)
     * Problem 3 in in-class exercises: [[MATLAB live]](./propagation_inclass.mlx)  [[PDF]](./propagation_inclass.pdf) 
 
 Solutions:  [[MATLAB Live]](./propagation_inclass_soln.mlx)  [[PDF]](./propagation_inclass_soln.pdf)  
