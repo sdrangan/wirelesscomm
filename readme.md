@@ -36,6 +36,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * Lecture: [[PDF]](./lectures/Unit01_Antennas.pdf) [[PPT]](./lectures/Unit01_Antennas.pptx) 
     * [Lecture videos](./unit01_antennas/readme.md) and in-class exercises
     * Demo: Calculating and displaying antenna patterns [[PDF]](./unit01_antennas/demo_antennas.pdf) [[Matlab]](./unit01_antennas/demo_antennas.m)
+    * Demo: 3GPP 5G antenna model [[PDF]](./unit01_antennas/demo_3gpp_antenna.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./unit01_antennas/lab_uav_antenna_partial.m)
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
