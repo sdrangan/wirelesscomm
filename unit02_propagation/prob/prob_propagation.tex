@@ -14,6 +14,7 @@
 \usetikzlibrary{shapes,arrows}
 \usepackage{mdframed}
 \usepackage{mcode}
+\usepackage{siunitx}
 %\usetikzlibrary{dsp,chains}
 
 %\restylefloat{figure}
@@ -46,7 +47,6 @@
 \def\limn{\lim_{n \rightarrow \infty}}
 \def\liminfn{\liminf_{n \rightarrow \infty}}
 \def\limsupn{\limsup_{n \rightarrow \infty}}
-\def\GV{Guo and Verd{\'u}}
 \def\MID{\,|\,}
 \def\MIDD{\,;\,}
 
@@ -163,6 +163,7 @@
 
 \def\Rect{\mathop{Rect}}
 \def\sinc{\mathop{sinc}}
+\def\NF{\mathrm{NF}}
 \def\Real{\mathrm{Re}}
 \def\Imag{\mathrm{Im}}
 \newcommand{\tran}{^{\text{\sf T}}}
@@ -177,19 +178,22 @@
 
 \begin{document}
 
-\title{Problems:  Non-LOS Propagation and Link Budget Analysis\\
+\title{Problem Solutions:  Non-LOS Propagation and Link Budget Analysis\\
 EL-GY 6023. Wireless Communications}
 \author{Prof.\ Sundeep Rangan}
 \date{}
 
 \maketitle
 
+In all the problems below, unless specified otherwise, $\phi$ is the
+azimuth angle and $\theta$ is elevation angle.
+
 \begin{enumerate}
 
 \item \emph{Noise:}
-Suppose a receiver consists of an low noise amplifier with a gain of 30 dB
+Suppose a receiver consists of an low noise amplifier with a gain of 20 dB
 and noise figure of 2 dB, followed by a second stage of amplification of
-another 20 dB with a noise figure of 10 dB.
+another 15 dB with a noise figure of 10 dB.
 \begin{enumerate}[label=(\alph*)]
 \item What is the total noise figure and gain of the system?
 \item Suppose a 10 dB attenuator is placed at the input of the LNA.
@@ -197,7 +201,8 @@ What is the resulting overall gain and noise figure?
 \item What if the attenuator is placed at the output of the LNA?
 \end{enumerate}
 
-\item \emph{SINR:} 
+
+\item \emph{SINR:}
 Suppose when a transmitter, TX1, sends data to a receiver RX
 without interference, the SNR is 10 dB.  Now suppose that TX2
 starts transmitting resulting in interference.
@@ -205,36 +210,49 @@ Suppose TX2 transmits at the same power as TX1 and the path loss from
 TX2 to RX is 5 dB greater than the path loss from TX1 to RX.
 What is the resulting SINR from TX1 to RX when TX2 is transmitting?
 
+\item \emph{Reflection loss:}  Consider a reflection at an 
+interface going from a characteristic impedance $\eta_1$ to $\eta_2$ at 
+an incident angle of $\theta_i = 0$.
+\begin{enumerate}[label=(\alph*)]
+\item What is the reflected angle $\theta_r$ and refracted 
+angle $\theta_t$?
+\item Show that the reflection coefficient $\Gamma$ is 
+identical in the parallel and perpendicular polarizations.
+Find $\Gamma$ in terms of $\eta_1$ and $\eta_2$.
+\item Estimate the expected reflected power gain $|\Gamma|^2$ 
+when a wave in free space strikes dry concrete.  
+Assume concrete has a relative permittivity  of $\epsilon_r \approx 4.5$.
+\end{enumerate}
 
-\item \emph{Reflection loss:}  Let $\Gamma$ be the reflection coefficient from
-an interface going from a characteristic impedance $\eta_1$ to $\eta_2$ and let 
-$\Gamma'$ be the reflection coefficient from
- $\eta_2$ to $\eta_1$.  Show that if the angle of incidence is
-zero $\theta_i=0$, $\Gamma = -\Gamma'$.  
 
 
-\item \emph{SNR requirements:} 
-A signal is received at power of $P = $-100 dBm and the noise power density
+\item \emph{SNR requirements:}
+A signal is received at power of $P_{rx} = $-100 dBm and the noise power density
 (including the noise figure) is $N_0 = $ -170 dBm/Hz.
-If a transmission of $b=100$ bits requires an $E_b/N_0$
-of 6~dB, what is the time to transmit the packet?
+If the receiver requires $E_b/N_0=$ \SI{6}{dB}, 
+what is the minimum time to transmit $b=1000$ bits?
 
-\item \emph{Simulating a statistical model:}  
+
+\item \emph{Simulating a statistical model:}
 Write short MATLAB code to do the following.  You do not need to run the code,
 just write the code.
 \begin{enumerate}[label=(\alph*)]
-\item Drop \mcode{nrx=1000} RX locations randomly in a circle of radius \mcode{radius = 100}m.
-\item Assuming the transmitter is at the origin at a height \mcode{htx=2}m higher
-than the RX, compute the distances \mcode{dist} to the RXs.
+\item Suppose \mcode{nrx=1000} RX locations are randomly located uniformly
+in a circle of radius \mcode{rmax = 100}\, \si{m} from the origin.  
+Generate a random vector \mcode{dist2} representing the  random distances
+from the origin of the RX locations.
+\item Assuming the transmitter is at the origin at a height \mcode{htx=2}\, \si{m} higher than the RX, compute the distances \mcode{dist} to the RXs.
 \item Assuming a path loss model,
 \[
-    PL = 32.4 + 14.3\log_{10}(d) + 20\log_{10}(f_c)  + \xi,
-    \quad \xi \sim \mathcal{N}(0,\sigma^2),
+    PL = 32.4 + 14.3\log_{10}(d \mbox{\, [m]}) + 20\log_{10}(f_c \mbox{\, [GHz]})  + \xi,
+    \quad \xi \sim \mathcal{N}(0,\sigma^2), \mbox{ [dB]}
 \]
-generate random path losses to the RXs.  Assume $\sigma = 4$ and 
-$f_c = 2.3$ GHz.
-\item Compute the SNR, $E_s/N_0$, to the RX.  State all the parameters that you would need.
+generate random path losses to the RXs.   Assume $\sigma = 4$\, \si{dB} and
+$f_c = 2.3$\, \si{GHz}.
+\item Finally plot a CDF of $E_s/N_0$ with transmit power, \mcode{Ptx = 15}\,
+\si{dBm}, bandwidth \mcode{B = } \SI{20}{MHz} and thermal noise \mcode{N0=-170}\, \si{dBm/Hz}.
 \end{enumerate}
+
 
 
 \item \emph{Simulating a statistical model:}
@@ -243,34 +261,35 @@ Consider an indoor propagation model where the path loss is,
     PL = \mathrm{FSPL}(d) + L_0 N, \quad N \sim \mathrm{Poisson}(\alpha d),
 \]
 where $d$ is the distance between the TX and RX,
-$\mathrm{FSPL}(d)$ is the free-space path loss, $N$ is 
-the number of walls between a transmitter and receiver and $N$ is modeled as 
+$\mathrm{FSPL}(d)$ is the free-space path loss, $N$ is
+the number of walls between a transmitter and receiver and $N$ is modeled as
 a Poisson random variable where $\alpha$ is average number of walls
-per meter of distance.  
-Write a MATLAB function 
+per meter of distance.
+Write a MATLAB function
 \begin{lstlisting}
     function pl = indoorPL(d, ... )
 \end{lstlisting}
-to generate random path loss values as function of a vector of distances.  
+to generate random path loss values as function of a vector of distances.
 State all the other parameters this function needs.  You may assume you have
 access to a function \mcode{fspl(lambda,d)} for the free-space path loss.
-  
+Place comments in your code describing all the input arguments.
+
 \item \emph{Outage probability:} Suppose that a link has the following properties:
 \begin{itemize}
 \item TX power, $P_{tx} =$ 20 dBm
-\item Bandwidth, $W =$ 20 MHz
+\item Bandwidth, $B =$ 20 MHz
 \item Noise power density (including noise figure) $N_0=$ -170 dBm/Hz.
 \end{itemize}
 Answer the following:
 \begin{enumerate}[label=(\alph*)]
-\item What is the maximum path loss, $PL_{max}$, that the link can
+\item What is the maximum path loss, $PL_{\rm max}$, that the link can
 have to meet an SNR target of 10 dB?
 \item Suppose that the path loss is lognormally distributed with
 \[
     PL = PL_0 + \xi, \quad \xi \sim {\mathcal N}(0,\sigma^2),
 \]
-where $PL_0 = $ 110 dB and $\sigma$ = 8~dB.
-What is the outage probability $P_{out}=\Pr(PL \geq PL_{max})$
+where $PL_0 =$ \SI{100}{dB} and $\sigma =$ \SI{8}{dB}.
+What is the outage probability $P_{out}=\Pr(PL \geq PL_{\rm max})$
 using the value $PL_{max}$ from part (a)?
 Your answer should have
 a $Q$-function.  You can evaluate it with MATLAB's function \mcode{qfunc}.
@@ -290,9 +309,10 @@ walls as a random variable with distribution:
         0 & \mbox{else, }
         \end{cases}
 \]
-and the loss per wall is $D=$ 7~dB.
+and the loss per wall is $D=$ \SI{7}{dB}.
 What is the outage probability $P_{out}$?
 \end{enumerate}
+
 
 \end{enumerate}
 
