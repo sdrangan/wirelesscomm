@@ -48,9 +48,9 @@ of the semester.  Other topics may be added at the end depending on time.
     * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./unit02_propagation/lab_prop_modeling_partial.m)
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
-    * Demo: Simulating fading [[PDF]](./fading/demo_fading.pdf) [[Matlab]](./fading/demo_fading.m)
-    * In-class exercises: [[PDF]](./fading/fading_inclass_partial.pdf) [[Matlab]](./fading/fading_inclass_partial.m)
-    * Lab:  5G channel sounding with Doppler [[PDF]](./fading/partial/lab_chan_sounder.pdf) [[Matlab]](./fading/partial/lab_chan_sounder.m)
+    * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
+    * Demo: Simulating fading [[PDF]](./unit03_fading/demo_fading.pdf) [[Matlab Live]](./fading/unit03_demo_fading.mlx)
+    * Lab:  5G channel sounding with Doppler [[PDF]](./unit03_fading/partial/lab_chan_sounder.pdf) [[Matlab]](./unit03_fading/partial/lab_chan_sounder.m)
 * Unit 4.  Diversity
 * Unit 5.  Capacity of Fading Channels and MAC-Layer Concepts
 * Unit 6.  Channel Estimation and Equalization
