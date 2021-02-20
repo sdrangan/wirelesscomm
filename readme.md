@@ -50,9 +50,10 @@ of the semester.  Other topics may be added at the end depending on time.
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
     * Demo: Simulating fading [[PDF]](./unit03_fading/demo_fading.pdf) [[Matlab Live]](./fading/unit03_demo_fading.mlx)
+    * Problems:  [[PDF]](./unit03_fading/prob/prob_fading.pdf) [[Latex]](./unit03_fading/prob/prob_fading.tex)
     * Lab:  5G channel sounding with Doppler [[PDF]](./unit03_fading/partial/lab_chan_sounder.pdf) [[Matlab]](./unit03_fading/partial/lab_chan_sounder.m)
-* Unit 4.  Diversity
-* Unit 5.  Capacity of Fading Channels and MAC-Layer Concepts
+* Unit 4.  Capaciy of Fadingin Channels
+* Unit 5.  MAC-Layer Concepts
 * Unit 6.  Channel Estimation and Equalization
 * Unit 7.  Multiple Antennas and Beamforming
     * Lecture: [[PDF]](./lectures/Unit06_Beamforming.pdf) [[PPT]](./lectures/Unit06_Beamforming.pptx) 
