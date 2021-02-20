@@ -238,7 +238,7 @@ What is the optimal integration time $T$ and maximum SNR?
 
 \end{enumerate}
 
-\item A received signal has two paths:
+\item \emph{Two path channel:}  A received signal has two paths:
 \begin{itemize}
 \item Path 1:  power -100 dBm and Doppler shift 100 Hz,
 \item Path 2:  power -103 dBm and Doppler shift -50 Hz.
@@ -250,7 +250,7 @@ What is the optimal integration time $T$ and maximum SNR?
 \item What is the fraction of time the power is greater than -101 dBm?
 \end{enumerate}
 
-\item (*) Suppose that a narrowband complex channel $h(t)$ be modeled as
+\item \emph{Two path channel:}   Suppose that a narrowband complex channel $h(t)$ be modeled as
 a wide-sense stationary random process.
 \begin{enumerate}[label=(\alph*)]
 
@@ -262,12 +262,20 @@ in $h(t)$ over a time $\tau$.
 Write $\rho(\tau)$ in terms of the autocorrelation function
 $R(\tau) = \Exp h(t)h^*(t-\tau)$.
 
-\item If $h(t)$ follows a Jakes' spectrum with maximum Doppler $f_{max} = $ 200 Hz,
+\item If $h(t)$ follows a Jakes' spectrum with a uniform angular distribution,
+the autocorrelation is given by ,
+\[
+    R(\tau) = R(0)J_0(2\pi f_{max}\tau),
+\]
+where $f_{max}$ is the maximum Doppler shift and $J_0(\cdot)$ is the Bessel 
+of the first kind.  Plot $R(\tau)/R(0)$ vs.\ $\tau f_{max}$ for $\tau f_{max} \in [0,5]$.
+
+\item Using the autocorrelation function in the previous part,
+if $f_{max} = $ \SI{200}{Hz},
 what is the time it takes the channel to change by 10\%?
-You will need MATLAB to evaluate the Bessel function.
 \end{enumerate}
 
-\item (*) Consider a multipath fading channel of the form
+\item \emph{Auto-correlation.}  Consider a multipath fading channel of the form
 \[
     y(t) = \frac{1}{\sqrt{L}}\sum_{\ell = 1}^L g_\ell
         e^{2\pi if_\ell} x(t-\tau_\ell), \quad f_\ell = f_{max}\cos(\theta_\ell),
@@ -301,33 +309,33 @@ What is the autocorrelation function in frequency
     R(\delta f) = \Exp\left[ H(t,f)H^*(t,f-\Delta f) \right].
 \]
 
-\item Suppose we define the 3~dB coherence bandwidth as the frequency $W$
+\item Suppose we define the \SI{3}{dB} coherence bandwidth as the frequency $W$
 where the frequency response changes by less than 3~dB.  That is,
 \[
     \Exp|H(t,f)-H(t,f+W)|^2 \leq \beta \Exp|H(t,f)|^2, \quad \beta = 0.5.
 \]
 Under the above exponential delay model,
-if the delay spread is $\lambda =$ 100 ns, what is the 3~dB bandwidth?
+if the delay spread is $\lambda =$ \SI{100}{ns}, what is the \SI{3}{dB} bandwidth?
 \end{enumerate}
-
-\item
-\begin{enumerate}[label=(\alph*)]
-\item (*) Consider the time-varying frequency response \eqref{eq:Htf}.
-Suppose that the AoAs are uniformly distributed in $\theta_\ell \in [-\Delta/2,\Delta/2]$.
-Write an expression for the autocorrelation over time,
-\[
-    R(\tau) := \Exp H(t,f)H^*(t-\tau,f).
-\]
-Your expression should have an integral.  Do not evaluate this integral.
-
-\item In 3D channel models, the paths arrive with an \emph{elevation} (vertical)
-angle $\omega_\ell$ to the $z$-axis
-and \emph{azimuth} (horizontal) angle $\varphi_\ell$ to the $x$-axis on the
-$xy$-plane.
-Suppose that the receiver moves along the positive $x$-axis.  What is the Doppler
-shift of a path arriving at angles $(\omega_\ell,\varphi_\ell)$.
-
-\end{enumerate}
+%
+%\item
+%\begin{enumerate}[label=(\alph*)]
+%\item (*) Consider the time-varying frequency response \eqref{eq:Htf}.
+%Suppose that the AoAs are uniformly distributed in $\theta_\ell \in [-\Delta/2,\Delta/2]$.
+%Write an expression for the autocorrelation over time,
+%\[
+%    R(\tau) := \Exp H(t,f)H^*(t-\tau,f).
+%\]
+%Your expression should have an integral.  Do not evaluate this integral.
+%
+%\item In 3D channel models, the paths arrive with an \emph{elevation} (vertical)
+%angle $\omega_\ell$ to the $z$-axis
+%and \emph{azimuth} (horizontal) angle $\varphi_\ell$ to the $x$-axis on the
+%$xy$-plane.
+%Suppose that the receiver moves along the positive $x$-axis.  What is the Doppler
+%shift of a path arriving at angles $(\omega_\ell,\varphi_\ell)$.
+%
+%\end{enumerate}
 
 \end{enumerate}
 
