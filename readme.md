@@ -57,6 +57,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * [Lecture videos](./unit04_coding/readme.md) and in-class exercises
     * Demo: Uncoded BER on fading channel [[PDF]](./unit04_coding/demo_uncoded.pdf) [[Matlab Live]](./unit04_coding/demo_uncoded.mlx)
     * Demo: Convolutional coding on a fading channel[[PDF]](./unit04_coding/demo_conv.pdf) [[Matlab Live]](./unit04_coding/demo_conv.mlx)
+    * Lab:  5G NR Downlink Throughput with Fading and LDPC coding [[PDF]](./unit04_coding/lab_partial/labPdsch.pdf) [[Matlab Live]](./unit04_coding/lab_partial/labPdsch.mlx)
 * Unit 5.  MAC-Layer Concepts
 * Unit 6.  Channel Estimation and Equalization
 * Unit 7.  Multiple Antennas and Beamforming
