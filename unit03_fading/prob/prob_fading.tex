@@ -250,7 +250,8 @@ What is the optimal integration time $T$ and maximum SNR?
 \item What is the fraction of time the power is greater than -101 dBm?
 \end{enumerate}
 
-\item \emph{Two path channel:}   Suppose that a narrowband complex channel $h(t)$ be modeled as
+\item \emph{Auto-correlation with time.}   
+Suppose that a narrowband complex channel $h(t)$ be modeled as
 a wide-sense stationary random process.
 \begin{enumerate}[label=(\alph*)]
 
@@ -267,7 +268,7 @@ the autocorrelation is given by ,
 \[
     R(\tau) = R(0)J_0(2\pi f_{max}\tau),
 \]
-where $f_{max}$ is the maximum Doppler shift and $J_0(\cdot)$ is the Bessel 
+where $f_{max}$ is the maximum Doppler shift and $J_0(\cdot)$ is the Bessel
 of the first kind.  Plot $R(\tau)/R(0)$ vs.\ $\tau f_{max}$ for $\tau f_{max} \in [0,5]$.
 
 \item Using the autocorrelation function in the previous part,
@@ -275,7 +276,7 @@ if $f_{max} = $ \SI{200}{Hz},
 what is the time it takes the channel to change by 10\%?
 \end{enumerate}
 
-\item \emph{Auto-correlation.}  Consider a multipath fading channel of the form
+\item \emph{Auto-correlation with delay.}  Consider a multipath fading channel of the form
 \[
     y(t) = \frac{1}{\sqrt{L}}\sum_{\ell = 1}^L g_\ell
         e^{2\pi if_\ell} x(t-\tau_\ell), \quad f_\ell = f_{max}\cos(\theta_\ell),
