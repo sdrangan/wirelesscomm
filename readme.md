@@ -59,7 +59,12 @@ of the semester.  Other topics may be added at the end depending on time.
     * Demo: Convolutional coding on a fading channel[[PDF]](./unit04_coding/demo_conv.pdf) [[Matlab Live]](./unit04_coding/demo_conv.mlx)
     * Lab:  5G NR Downlink Throughput with Fading and LDPC coding [[PDF]](./unit04_coding/lab_partial/labPdsch.pdf) [[Matlab Live]](./unit04_coding/lab_partial/labPdsch.mlx)
     * Problems:  [[PDF]](./unit04_coding/prob/prob_coding.pdf) [[Latex]](./unit04_coding/prob/prob_coding.tex)
-* Unit 5.  MAC-Layer Concepts
+* Unit 5.  Adaptive Modulation and Coding
+    * Lecture: [[PDF]](./lectures/Unit05_AMC.pdf) [[PPT]](./lectures/Unit05_AMC.pptx) 
+    * [Lecture videos](./unit05_amc/readme.md) and in-class exercises
+    * Demo: 802.11 MCS selection  [[PDF]](./unit05_amc/demo_mcs.pdf) [[Matlab Live]](./unit05_amc/demo_mcs.mlx)
+    * Demo: Channel Tracking with 5G NR CSI-RS [[PDF]](./unit05_amc/demo_csirs.pdf) [[Matlab Live]](./unit05_amc/demo_csirs.mlx)    
+    * Lab:  5G NR DL Throughput with Multi-Process HARQ [[PDF]](./unit05_amc/lab_partial/labHarq.pdf) [[Matlab Live]](./unit05_amc/lab_partial/labHarq.mlx) 
 * Unit 6.  Channel Estimation and Equalization
 * Unit 7.  Multiple Antennas and Beamforming
     * Lecture: [[PDF]](./lectures/Unit06_Beamforming.pdf) [[PPT]](./lectures/Unit06_Beamforming.pptx) 
