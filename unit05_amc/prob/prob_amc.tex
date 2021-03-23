@@ -1,0 +1,440 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mdframed}
+\usepackage{mcode}
+\usepackage{siunitx}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\dbf}{\mathbf{d}}
+\newcommand{\ebf}{\mathbf{e}}
+\newcommand{\gbf}{\mathbf{g}}
+\newcommand{\hbf}{\mathbf{h}}
+\newcommand{\pbf}{\mathbf{p}}
+\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
+\newcommand{\qbf}{\mathbf{q}}
+\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
+\newcommand{\rbf}{\mathbf{r}}
+\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
+\newcommand{\sbf}{\mathbf{s}}
+\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
+\newcommand{\utildebf}{\tilde{\mathbf{u}}}
+\newcommand{\vbf}{\mathbf{v}}
+\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
+\newcommand{\wbf}{\mathbf{w}}
+\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
+\newcommand{\xbfbar}{\overline{\mathbf{x}}}
+\newcommand{\ybf}{\mathbf{y}}
+\newcommand{\zbf}{\mathbf{z}}
+\newcommand{\zbfbar}{\overline{\mathbf{z}}}
+\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Ebf}{\mathbf{E}}
+\newcommand{\Gbf}{\mathbf{G}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\Kbf}{\mathbf{K}}
+\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\mathbf{Q}}
+\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\mathbf{S}}
+\newcommand{\Ubf}{\mathbf{U}}
+\newcommand{\Vbf}{\mathbf{V}}
+\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Ybf}{\mathbf{Y}}
+\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\NF{\mathrm{NF}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\tran}{^{\text{\sf T}}}
+\newcommand{\herm}{^{\text{\sf H}}}
+
+
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+\begin{document}
+
+\title{Problems:  Adaptive Modulation and Coding\\
+ECE-GY 6023. Wireless Communications}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+
+\begin{enumerate}
+\item \emph{MCS selection:}  A system has four MCS selections with minimum required SNRs
+as shown:
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{MCS} & 1 & 2 & 3 & 4 \\ \hline
+\textbf{Min SNR [dB]} & 0 & 4 & 8 & 12 \\ \hline
+\end{tabular}
+\end{table}
+\begin{enumerate}[label=(\alph*)]
+\item Suppose that the SNR in \si{dB}, $\gamma$, is unknown and can be modeled as Gaussian
+variable with mean \SI{6}{dB} and standard deviation of \SI{2}{dB}.
+What is the probability that $\gamma > 8$\, \si{dB}, the required SNR for MCS 3.
+
+\item The TX attempts MCS 3 and it fails, meaning $\gamma \leq 8$\, \si{dB}.
+If it now attempts MCS 2, what is the probability that it will pass assuming the channel has not changed.
+\end{enumerate}
+
+
+\item \emph{Markovian errors:}
+In this problem, we will show how to use Markov processes
+to model error probabilities on correlated channels.
+As a simple example, suppose that a channel in time slot $k$
+can be modeled as being in one of two states: a good state ($X_k=1$),
+and a bad state ($X_k = 0$).
+Assume $X_k$ is Markov with transition probability matrix
+\[
+    P = \begin{bmatrix}
+        0.8 & 0.2 \\
+        0.3 & 0.7
+        \end{bmatrix}.
+\]
+A transmitter sends packets in each time slot.
+Let $Y_k=0$ or $1$ be the indicator that a packet fails or
+passes in time slot $k$.  Assume,
+\[
+    P(Y_k=1|X_k=1) = 0.8, \quad P(Y_k=1|X_k=0) = 0.4.
+\]
+Assume that, given the $X_k$'s, the $Y_k$'s are independent.
+\begin{enumerate}[label=(\alph*)]
+\item Let $\alpha_k(i) = P(X_k=i)$.  Find the recursion
+for the values $\alpha_{k+1}(i)$ in terms of
+the values $\alpha_k(j)$.
+
+\item Let
+\[
+    \alpha^0_k(i) = P(X_k=i|Y_0=0,\ldots,Y_{k-1}=0).
+\]
+That is, $\alpha^0_k(i)$ is the probability that
+$X_k=i$ given that the previous $k-1$ transmissions have failed.  Find the recursion for $\alpha^0_{k+1}(i)$ in
+terms of the values $\alpha^0_k(i)$.
+
+\item Let $T$ be the time,
+\[
+    T = \min \left\{~k~|Y_k = 1~\right\},
+\]
+which is the index of the first slot that the packet passes.
+Suppose that $X_0=0$.
+Write a simple MATLAB program to compute $P(T=k)$ for
+$k=0,1,\ldots,9$ using the above recursions.
+\end{enumerate}
+
+
+
+\item \emph{Multi-Process ARQ timeline:} Suppose that a gNB wants to send $N=10$ packet data units
+(PDUs).
+The PDUs are indexed $n=0,1,\ldots,N-1$.
+In each slot, it attempts to send one PDU beginning in slot $k=0$ starting with PDU 0.
+There are  $K=4$ parallel HARQ processes.
+Suppose that the transmissions fails in slots $k=5, 6$ and 7 and passes in all other slots.
+\begin{enumerate}[label=(\alph*)]
+
+\item For each PDU, indicate the fist slot it is correctly decoded at the receiver.
+
+\item Suppose the receiver only releases decoded the PDUs in order to the higher layer.
+So, for example, it holds PDU 3 back until it receives PDU 2.  Also, there is a fixed delay
+of 3 slots from the time of transmission to the PDU being available at the receiver for higher layers.
+When do the PDUs arrive at the higher layer?
+\end{enumerate}
+
+
+
+\item \emph{TB size:}  Suppose that a \SI{64}{kbps} voice over IP (VoIP)
+system transmits frames once every
+\SI{20}{ms}.  Each voice frame also requires a \SI{20}{B} IP header, \SI{20}{B} UDP header,
+and 24 bits CRC.
+\begin{enumerate}[label=(\alph*)]
+\item How many bits are in each voice frame?
+
+\item Suppose the data is transmitted in an NR-like system with 14 OFDM symbols and 12 sub-carriers
+per RB.  In each RB, 14 REs are used for overhead.  At a spectral efficiency of 2 bits / RE,
+how many RBs are needed to transmit the voice packet.
+
+\item If the system has 51 RBs in bandwidth with one slot every \SI{0.5}{ms}, what is the fraction
+of RBs used by the VoIP application?
+\end{enumerate}
+
+
+\item \emph{HARQ Errors:}  For each of the following events, state what will occur:
+\begin{itemize}
+\item The PDU can eventually recovered through HARQ, or
+\item The PDU cannot be recovered through HARQ and will need to be recovered from
+a high-layer ARQ protocol (e.g.\ at the RLC or TCP layer).
+\end{itemize}
+\begin{enumerate}[label=(\alph*)]
+\item A DL PDCCH for an initial transmission is not seen by the UE, so it does not even
+know that there is a DL data transmission.
+
+\item The UE decodes the DL data and sends an ACK to the gNB.  But, the gNB mistakes the
+ACK for a NACK.
+
+\item The UE fails to decode the DL data and sends a NACK to the gNB.  But, the gNB mistakes the
+NACK for an ACK.
+
+\end{enumerate}
+
+
+\item \emph{Power and SNR estimation:}  Suppose that
+we have two groups of reference symbols:
+\begin{itemize}
+\item Zero-power RS that contain noise only,
+\[
+    r_k = w_k, \quad w_k \sim C{\mathcal N}(0,N).
+\]
+On these symbols, we compute a noise estimate,
+\[
+    \widehat{N} = \frac{1}{K} \sum_{k=1}^K |r_k|^2,
+\]
+where $K$ is the number of symbols over which we average.
+
+
+\item Non zero-power RS with signal and noise,
+\[
+    r_k = h_kx_k + w_k, \quad
+    h_k \sim C{\mathcal N}(0,E_s), \quad
+    w_k \sim C{\mathcal N}(0,N),
+\]
+and $|x_k|=1$ is known to the receiver.
+On these symbols, we compute a signal power estimate
+\[
+    \widehat{S} = \frac{1}{M} \sum_{k=1}^K |r_k|^2,
+\]
+where $M$ is the number of symbols over which we average.
+\end{itemize}
+
+\begin{enumerate}[label=(\alph*)]
+\item Show that  $\widehat{N}$ and $\widehat{S}$
+can be written as a scaled chi-squared
+distributions with a certain number of degrees of freedom.
+You can look up this distribution in any source.
+
+\item Show that the ratio $\widehat{S}/\widehat{N}$ can be written as a scaled $F$-distribution
+distribution with a certain number of degrees of freedom.
+You can look up this distribution in any source.
+
+\item Suppose we use
+\[
+    \widehat{\gamma} = \max\left\{ 0, \frac{\widehat{S}}{\widehat{N}} - 1\right\}
+\]
+as the estimate of the true SNR $\gamma = E_s/N$.
+Plot the probability that the SNR is accurate within \SI{0.5}{dB} as a function of $K$ with $K=M$.
+You can use the MATLAB function \mcode{fcdf}.
+Assume the true SNR is, $\gamma = $\, \SI{3}{dB}.
+\end{enumerate}
+
+\item \emph{CSI estimation bias:}  Suppose that in a group of $K$ symbols,
+reference symbols $x_k$ are received as
+\[
+    r_k = hx_k + w_k, \quad w_k \sim {\mathcal CN}(0,N),
+    \quad |hx_k|^2 = E_s,
+\]
+where $h$ is an unknown channel, $N$ is the noise power, and $E_s$ is the received signal energy.
+We channel and noise estimates via
+\[
+    \widehat{h} = \frac{ \sum_{k=1}^K x_k^*r_k } {\sum_{k=1}^K |x_k|^2 },
+    \quad
+    \widehat{N} = \frac{\alpha }{K} \sum_{k=1}^K |r_k - \widehat{h}x_k|^2.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Find the constant $\alpha$ such that the noise estimate is unbiased.  That is,
+\[
+    \Exp\left[ \widehat{N} \right] = N.
+\]
+\item Suppose that you obtain an accurate estimate of the noise $\widehat{N}=N$
+(for example, by averaging over large numbers of groups).  How would you get an unbiased
+estimate of $E_s$?
+\end{enumerate}
+
+
+
+
+\item \emph{Rate matching:}  Suppose you send 200 bits with a rate $1/2$ convolutional code
+with constraint length $K=7$.
+\begin{enumerate}[label=(\alph*)]
+\item How many coded bits are output from the convolutional encoder?  Remember to include
+the tail bits.
+
+\item Suppose you want to send the data on 150 QPSK symbols.  How many bits should be punctured or
+repeated?
+\end{enumerate}
+
+\item \emph{Comparing Chase and IR:}
+Suppose that a TX can create mother codes
+that, on an AWGN channel, require an  SNR $\gamma$
+and provide a rate per symbol of
+\[
+    R(\gamma)
+    = \min\{ \rho_{\rm max}, \alpha \log_2(1+\gamma) \},
+\]
+where $\rho_{\rm max}$ is the maximum spectral efficiency
+and $\alpha$ is the fraction that the code achieves within
+the Shannon rate.
+Now suppose we use this code for HARQ  with $K$ transmissions.
+Suppose that all the symbols in  transmission $k$ experience
+some SNR $\gamma_k$, $k=1,\ldots,K$.
+\begin{enumerate}[label=(\alph*)]
+\item Suppose, we use Chase combining where we
+create a packet from the mother code and retransmit it
+in each of the $K$ transmissions.  For each target $\gamma$,
+find the condition on $\gamma_1,\ldots,\gamma_K$ that the
+packet will pass.  Also, find the rate, $R_{\rm chase}(\gamma)$ that will be achieved if
+the packet passes after $K$ transmissions.
+
+\item Next, suppose we use IR where we create a longer packet
+and transmit a fraction $1/K$ symbols in each transmission.
+For each target $\gamma$,
+find the condition on $\gamma_1,\ldots,\gamma_K$ that the
+packet will pass.  Also, find the rate, $R_{\rm IR}(\gamma)$ that will be achieved if
+the packet passes after $K$ transmissions.
+
+\item Set $K=3$ and generate random i.i.d.\ $\gamma_k$
+that are exponentially distributed with an average of \SI{3}{dB} (i.e.\ independent Rayleigh fading).
+Generate $n=1000$ instances of this channel
+using MATLAB.
+By varying the target SNR $\gamma$,
+plot the probability that the packet the packet passes
+after $K$ transmissions, 
+vs.\ the rates $R_{\rm chase}(\gamma)$ and 
+$R_{\rm IR}(\gamma)$, for both Chase and IR combining.
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
+
