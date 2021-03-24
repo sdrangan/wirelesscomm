@@ -14,6 +14,6 @@ Slides:  [[PDF]](../lectures/Unit05_AMC.pdf) [[Powerpoint]](../lectures/Unit05_A
 * CSI Feedback and Link Adaptation in 5G NR:  [[YouTube]](https://youtu.be/yxjLNmg8t-8)
     * Complete CSI-RS demo: [[MATLAB live]](./demo_csirs.mlx)  [[PDF]](./demo_csirs.pdf) 
     * Solution: [[MATLAB live]](./demo_csirs_soln.mlx)  [[PDF]](./demo_csirs_soln.pdf) 
-* Hybrid ARQ:  TBD
+* Hybrid ARQ:  [[YouTube]](https://youtu.be/VvC8GBYhxGk)
 
 
