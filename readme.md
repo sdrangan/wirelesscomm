@@ -65,7 +65,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * Demo: 802.11 MCS selection  [[PDF]](./unit05_amc/demo_mcs.pdf) [[Matlab Live]](./unit05_amc/demo_mcs.mlx)
     * Demo: Channel Tracking with 5G NR CSI-RS [[PDF]](./unit05_amc/demo_csirs.pdf) [[Matlab Live]](./unit05_amc/demo_csirs.mlx)    
     * Lab:  5G NR DL Throughput with Multi-Process HARQ [[PDF]](./unit05_amc/lab_partial/labHarq.pdf) [[Matlab Live]](./unit05_amc/lab_partial/labHarq.mlx) 
-    * Problems:  [[PDF]](./unit05_amc/prob/prob_amc.pdf) [[Latex]](./unit05_amc/prob/prob_amc   .tex)
+    * Problems:  [[PDF]](./unit05_amc/prob/prob_amc.pdf) [[Latex]](./unit05_amc/prob/prob_amc.tex)
 * Unit 6.  Diversity
 * Unit 7.  OFDM Channel Estimation and Equalization
     * Lecture:  [[PDF]](./lectures/Unit07_ChanEst.pdf) [[Powerpoint]](../lectures/Unit07_ChanEst.pdf) 
@@ -73,6 +73,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * Demo:  5G NR DM-RS configuration  [[PDF]](./unit07_chanest/demoDMRSConfig.pdf)  [[Matlab Live]](./unit07_chanest/demoDMRSConfig.mlx) 
     * Demo:  Kernel regression channel estimation [[PDF]](./unit07_chanest/demoKernelEst.pdf)  [[Matlab Live]](./unit07_chanest/demoKernelEst.mlx) 
     * Lab:  5G NR DL Throughput with Channel Estimation [[PDF]](./unit07_chanest/lab_partial/labChanEst.pdf) [[Matlab Live]](./unit07_chanest/lab_partial/labChanEst.mlx) 
+    * Problems:  [[PDF]](./unit07_chanest/prob/prob_chanest.pdf) [[Latex]](./unit07_chanest/prob/prob_chanest.tex)
 * Unit 8.  Multiple Antennas and Beamforming
     * Lecture: [[PDF]](./lectures/Unit06_Beamforming.pdf) [[PPT]](./lectures/Unit06_Beamforming.pptx) 
     * Demo: Visualizing and simualting arrays [[PDF]](./beamforming/demo_bf.pdf) [[Matlab]](./beamforming/demo_bf.m)
