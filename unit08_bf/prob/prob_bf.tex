@@ -1,0 +1,356 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath, amssymb, bm, cite, epsfig, psfrag}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usetikzlibrary{shapes,arrows}
+\usepackage{mdframed}
+\usepackage{mcode}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{physics}
+%\usetikzlibrary{dsp,chains}
+
+%\restylefloat{figure}
+%\theoremstyle{plain}      \newtheorem{theorem}{Theorem}
+%\theoremstyle{definition} \newtheorem{definition}{Definition}
+
+\def\del{\partial}
+\def\ds{\displaystyle}
+\def\ts{\textstyle}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\beqa{\begin{eqnarray}}
+\def\eeqa{\end{eqnarray}}
+\def\beqan{\begin{eqnarray*}}
+\def\eeqan{\end{eqnarray*}}
+\def\nn{\nonumber}
+\def\binomial{\mathop{\mathrm{binomial}}}
+\def\half{{\ts\frac{1}{2}}}
+\def\Half{{\frac{1}{2}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+\def\Q{{\mathbb{Q}}}
+\def\R{{\mathbb{R}}}
+\def\C{{\mathbb{C}}}
+\def\argmin{\mathop{\mathrm{arg\,min}}}
+\def\argmax{\mathop{\mathrm{arg\,max}}}
+%\def\span{\mathop{\mathrm{span}}}
+\def\diag{\mathop{\mathrm{diag}}}
+\def\x{\times}
+\def\limn{\lim_{n \rightarrow \infty}}
+\def\liminfn{\liminf_{n \rightarrow \infty}}
+\def\limsupn{\limsup_{n \rightarrow \infty}}
+\def\MID{\,|\,}
+\def\MIDD{\,;\,}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{assumption}{Assumption}
+\newtheorem{claim}{Claim}
+\def\qed{\mbox{} \hfill $\Box$}
+\setlength{\unitlength}{1mm}
+
+\def\bhat{\widehat{b}}
+\def\ehat{\widehat{e}}
+\def\phat{\widehat{p}}
+\def\qhat{\widehat{q}}
+\def\rhat{\widehat{r}}
+\def\shat{\widehat{s}}
+\def\uhat{\widehat{u}}
+\def\ubar{\overline{u}}
+\def\vhat{\widehat{v}}
+\def\xhat{\widehat{x}}
+\def\xbar{\overline{x}}
+\def\zhat{\widehat{z}}
+\def\zbar{\overline{z}}
+\def\la{\leftarrow}
+\def\ra{\rightarrow}
+\def\MSE{\mbox{\small \sffamily MSE}}
+\def\SNR{\mbox{\small \sffamily SNR}}
+\def\SINR{\mbox{\small \sffamily SINR}}
+\def\arr{\rightarrow}
+\def\Exp{\mathbb{E}}
+\def\var{\mbox{var}}
+\def\Tr{\mbox{Tr}}
+\def\tm1{t\! - \! 1}
+\def\tp1{t\! + \! 1}
+
+\def\Xset{{\cal X}}
+
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\abf}{\mathbf{a}}
+\newcommand{\bbf}{\mathbf{b}}
+\newcommand{\dbf}{\mathbf{d}}
+\newcommand{\ebf}{\mathbf{e}}
+\newcommand{\gbf}{\mathbf{g}}
+\newcommand{\hbf}{\mathbf{h}}
+\newcommand{\pbf}{\mathbf{p}}
+\newcommand{\pbfhat}{\widehat{\mathbf{p}}}
+\newcommand{\qbf}{\mathbf{q}}
+\newcommand{\qbfhat}{\widehat{\mathbf{q}}}
+\newcommand{\rbf}{\mathbf{r}}
+\newcommand{\rbfhat}{\widehat{\mathbf{r}}}
+\newcommand{\sbf}{\mathbf{s}}
+\newcommand{\sbfhat}{\widehat{\mathbf{s}}}
+\newcommand{\ubf}{\mathbf{u}}
+\newcommand{\ubfhat}{\widehat{\mathbf{u}}}
+\newcommand{\utildebf}{\tilde{\mathbf{u}}}
+\newcommand{\vbf}{\mathbf{v}}
+\newcommand{\vbfhat}{\widehat{\mathbf{v}}}
+\newcommand{\wbf}{\mathbf{w}}
+\newcommand{\wbfhat}{\widehat{\mathbf{w}}}
+\newcommand{\xbf}{\mathbf{x}}
+\newcommand{\xbfhat}{\widehat{\mathbf{x}}}
+\newcommand{\xbfbar}{\overline{\mathbf{x}}}
+\newcommand{\ybf}{\mathbf{y}}
+\newcommand{\zbf}{\mathbf{z}}
+\newcommand{\zbfbar}{\overline{\mathbf{z}}}
+\newcommand{\zbfhat}{\widehat{\mathbf{z}}}
+\newcommand{\Ahat}{\widehat{A}}
+\newcommand{\Abf}{\mathbf{A}}
+\newcommand{\Bbf}{\mathbf{B}}
+\newcommand{\Cbf}{\mathbf{C}}
+\newcommand{\Bbfhat}{\widehat{\mathbf{B}}}
+\newcommand{\Dbf}{\mathbf{D}}
+\newcommand{\Ebf}{\mathbf{E}}
+\newcommand{\Gbf}{\mathbf{G}}
+\newcommand{\Hbf}{\mathbf{H}}
+\newcommand{\Ibf}{\mathbf{I}}
+\newcommand{\Kbf}{\mathbf{K}}
+\newcommand{\Pbf}{\mathbf{P}}
+\newcommand{\Phat}{\widehat{P}}
+\newcommand{\Qbf}{\mathbf{Q}}
+\newcommand{\Rbf}{\mathbf{R}}
+\newcommand{\Rhat}{\widehat{R}}
+\newcommand{\Sbf}{\mathbf{S}}
+\newcommand{\Ubf}{\mathbf{U}}
+\newcommand{\Vbf}{\mathbf{V}}
+\newcommand{\Wbf}{\mathbf{W}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Ybf}{\mathbf{Y}}
+\newcommand{\Zbf}{\mathbf{Z}}
+\newcommand{\Zhat}{\widehat{Z}}
+\newcommand{\Zbfhat}{\widehat{\mathbf{Z}}}
+\def\alphabf{{\boldsymbol \alpha}}
+\def\betabf{{\boldsymbol \beta}}
+\def\mubf{{\boldsymbol \mu}}
+\def\lambdabf{{\boldsymbol \lambda}}
+\def\etabf{{\boldsymbol \eta}}
+\def\xibf{{\boldsymbol \xi}}
+\def\taubf{{\boldsymbol \tau}}
+\def\sigmahat{{\widehat{\sigma}}}
+\def\thetabf{{\bm{\theta}}}
+\def\thetabfhat{{\widehat{\bm{\theta}}}}
+\def\thetahat{{\widehat{\theta}}}
+\def\mubar{\overline{\mu}}
+\def\muavg{\mu}
+\def\sigbf{\bm{\sigma}}
+\def\etal{\emph{et al.}}
+\def\Ggothic{\mathfrak{G}}
+\def\Pset{{\mathcal P}}
+\newcommand{\bigCond}[2]{\bigl({#1} \!\bigm\vert\! {#2} \bigr)}
+\newcommand{\BigCond}[2]{\Bigl({#1} \!\Bigm\vert\! {#2} \Bigr)}
+
+\def\Rect{\mathop{Rect}}
+\def\sinc{\mathop{sinc}}
+\def\NF{\mathrm{NF}}
+\def\Real{\mathrm{Re}}
+\def\Imag{\mathrm{Im}}
+\newcommand{\tran}{^{\text{\sf T}}}
+\newcommand{\herm}{^{\text{\sf H}}}
+
+
+% Solution environment
+\definecolor{lightgray}{gray}{0.95}
+\newmdenv[linecolor=white,backgroundcolor=lightgray,frametitle=Solution:]{solution}
+
+
+
+\begin{document}
+
+\title{Problems:  Antenna Arrays and Beamforming\\
+ECE-GY 6023. Wireless Communications}
+\author{Prof.\ Sundeep Rangan}
+\date{}
+
+\maketitle
+
+
+\begin{enumerate}
+
+\item \emph{ULA.}  Consider a ULA with spatial signature,
+\[
+    \ubf(\phi) = \left[ 1, e^{i \beta \sin(\phi)}, \cdots,
+    e^{i \beta(N-1) \sin(\phi)} \right]\tran, \quad
+    \beta = \frac{2\pi d}{\lambda},
+\]
+where $\phi$ is the azimuth angle relative to boresight.
+\begin{enumerate}[label=(\alph*)]
+\item Find the optimal beamforming vector for an angle $\phi= 30^\circ$
+with $N=8$ antennas and $d=\lambda/2$.
+\item Now suppose a path arrives at an angle $\phi = 60^\circ$.
+What is the beamforming gain on that path using the BF vector in part (a)?
+\end{enumerate}
+
+\item \emph{Constrained beamforming.} Consider a MISO channel,
+\[
+    \rbf = \hbf x + \vbf, \quad \vbf \sim C{\mathcal N}(0,N_0 \Ibf), \quad |x|^2 = E_x.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item What is the SNR after beamforming with a vector $\wbf$?
+\item What is the maximum SNR after beamforming if we are allowed any vector $\wbf$?
+\item What is the maximum SNR after beamforming if the components of $\wbf$ 
+must be constant magnitude, $|w_n| = 1$.  That is, you can only change the phase of $w_n$.
+This commonly occurs in analog beamforming systems.
+\item What is the maximum SNR after beamforming if 
+$w_n \neq 0$ for only one antenna $n$.  This is called antenna selection beamforming.
+\item Suppose $\hbf = [4,2+i,-1,i]\tran$ and $E_x/N_0=$\, \si{5}{dB}.  What is the SNR
+after beamforming in parts (b), (c) and (d)?
+\end{enumerate}
+
+
+\item \label{prob:freq_resp} 
+\emph{Vector frequency response}.  Consider a MISO channel where
+\[
+    \rbf = \hbf(f)\xbf + \vbf, \quad \vbf \sim C{\mathcal N}(0,N_0 \Ibf), \quad |x|^2 = E_x,
+\]
+where $\hbf(f)$ is the frequency-dependent channel
+\[
+    \hbf = \sum_{\ell=1}^L a_\ell e^{2\pi if \tau_\ell} \ubf(\theta_\ell),
+\]
+and $L$ is the number of paths. Suppose the
+array is $N=8$ ULA with antenna spacing $d=\lambda/2$ and the channel
+has three paths with parameters shown in Table \ref{tab:freq_resp}.
+In the table, the column ``SNR" is $E_x|a_\ell|^2/N_0$, and the column ``path phase" is the angle of $a_\ell$.
+
+\begin{table}
+\centering
+\footnotesize
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Path & SNR [dB] & Path phase [deg] & AoA $\phi_\ell$ [deg] & Delay $\tau_\ell$ [ns]  \\ \hline
+1 & 4 & 0 & 30 & 0 \\ \hline
+2 & 1 & 180 & -30 & 100 \\ \hline
+3 & -2 & 65 & 80 & 130 \\ \hline
+\end{tabular}
+\caption{Problem \ref{prob:freq_resp}:  Path parameters.}
+\label{tab:freq_resp}
+\end{table}
+
+Write a short MATLAB program to plot the following SNR values for 100
+frequency points in the range $f \in [-10,10]$\, \si{MHz}:
+\begin{enumerate}[label=(\alph*)]
+\item The SNR only using the signal from antenna 1.
+\item The SNR after beamforming where the beamforming vector is optimally selected at each
+frequency.
+\item The SNR after beamforming where the beamforming vector is optimized for $f=0$.
+\end{enumerate}
+
+\item \emph{Beamforming with SVDs}.  Below are a set of channel matrices $\Hbf$
+described by TX and RX spatial signatures $\ubf_{\rm tx}(\Omega^{\rm tx}_\ell)$
+and $\ubf_{\rm rx}(\Omega^{\rm rx}_\ell)$ and complex gains
+$g_\ell$.
+For each of the  channel matrices,
+find the rank $r$, the maximum singular value and the optimal TX and RX 
+beamforming vectors.  Assume all matrices have dimensions
+ $\Hbf \in \C^{N_r \times N_t}$,
+and the spatial signatures are normalized so that 
+\[
+    \|\ubf_{\rm tx}(\Omega^{\rm tx})\|^2=N_t, \quad
+    \|\ubf_{\rm rx}(\Omega^{\rm rx})\|^2=N_r,
+\]
+for all angles $\Omega^{\rm tx}$ and $\Omega^{\rm rx}$.
+\begin{enumerate}[label=(\alph*)]
+\item Single path channel:
+\[
+    \Hbf = g_1 
+        \ubf_{\rm rx}(\Omega_1^{\rm rx}) \ubf_{\rm tx}(\Omega_1^{\rm tx}).
+\]
+\item Two channel paths with same RX angle $\Omega_1^{\rm rx}$ 
+and two different TX angles, $\Omega_1^{\rm tx}$ and $\Omega_2^{\rm tx}$:
+\[
+    \Hbf = g_1
+        \ubf_{\rm rx}(\Omega_1^{\rm rx}) \ubf_{\rm tx}(\Omega_1^{\rm tx}) +
+        g_2 \ubf_{\rm rx}(\Omega_1^{\rm rx}) \ubf_{\rm tx}(\Omega_2^{\rm tx}).
+\]
+Assume $|g_1| > |g_2|$ and $\ubf_{\rm tx}(\Omega_1^{\rm tx}) \perp \ubf_{\rm tx}(\Omega_2^{\rm tx})$
+
+\item Two channel paths with two different RX angles 
+and two different TX angles:
+\[
+    \Hbf = g_1
+        \ubf_{\rm rx}(\Omega_1^{\rm rx}) \ubf_{\rm tx}(\Omega_1^{\rm tx}) +
+        g_2 \ubf_{\rm rx}(\Omega_2^{\rm rx}) \ubf_{\rm tx}(\Omega_2^{\rm tx}).
+\]
+Assume $|g_1| > |g_2|$, $\ubf_{\rm rx}(\Omega_1^{\rm rx}) \perp \ubf_{\rm rx}(\Omega_2^{\rm rx})$ and $\ubf_{\rm tx}(\Omega_1^{\rm tx}) \perp \ubf_{\rm tx}(\Omega_2^{\rm tx})$.
+
+\item Same as part (b) except the two TX spatial signatures are not orthongonal:
+\[
+    \ubf_{\rm tx}(\Omega_1^{\rm tx})^*\ubf_{\rm tx}(\Omega_2^{\rm tx})  =\rho N_t,
+\]
+for some $\rho$ with $|\rho|\leq 1$.
+
+\end{enumerate}
+
+\item \emph{Array normalization.}  When there is no mutual coupling,
+an array with $N$ elements can generally obtain a gain of $N$ (in linear scale).
+However, in this exercise, we will show that the gain is more limited when the
+antennas are closely spaced.  To this end, consider a  ULA with $N$ elements
+with total length $L$, so the antennas are spaced by $L/N$.   
+Given a beamforming vector $\wbf \in \C^N$,
+suppose the power intensity at angle $\phi$ is,
+\[
+    U(\phi) = c|\wbf\tran \ubf(\phi)|^2,
+\]
+where $\ubf(\phi)$ is the spatial signature and $c > 0$ is some constant.
+Suppose we use the all ones beamforming vector $w_n = \frac{1}{N}$ so that the 
+energy is maximized at $\phi = 0$.
+\begin{enumerate}[label=(\alph*)]
+\item Write the spatial signature $\ubf(\phi)$ as a function of the total array length
+$L$, wavelength $\lambda$ and number of elements $N$.
+
+\item Find the limit 
+\[
+    \lim_{N \rightarrow \infty} U(\phi).
+\]
+
+\item Recall the antenna directivity is
+\[
+    D(\phi) = \frac{4\pi U(\phi)}{P_{\rm rad}},
+\]
+where $P_{\rm rad}$ is the total radiated power,
+\[
+    P_{\rm rad} = \int_{-\pi/2}^{\pi/2} \int_{-\pi}^{\pi} U(\phi)\cos \theta \,
+        \dd \phi \,\dd \theta.
+\]
+Use MATLAB to plot $D(\phi)$ using the limit of large numbers of antennas for $L=2\lambda$, 
+$4\lambda$ and $8\lambda$.  What is the peak gain in each case.
+
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
+
+
