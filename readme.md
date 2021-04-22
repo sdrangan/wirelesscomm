@@ -78,6 +78,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * Lecture: [[PDF]](./lectures/Unit08_Beamforming.pdf) [[PPT]](./lectures/Unit08_Beamforming.pptx) 
     * Demo: Visualizing and simualting arrays [[PDF]](./unit08_bf/demoBF.pdf) [[Matlab Live]](./unit08_bf/demoBF.mlx)
     * Demo: Pattern multiplication and mutual coupling [[PDF]](./unit08_bf/mutualCoupling.pdf) [[Matlab Live]](./unit08_bf/mutualCoupling.mlx)
+    * Lab:  Simulating beamforming on a 28 GHz channel [[PDF]](./unit08_bf/labPartial/labBF.pdf) [[Matlab Live]](./unit08_bf/labPartial/labBF.pdf)
     * Problems:  [[PDF]](./unit08_bf/prob/prob_bf.pdf) [[Latex]](./unit08_bf/prob/prob_bf.tex)
 * Unit 9.  Beam Tracking and Directional Estimation
 * Unit 10.  Introduction to MIMO 
