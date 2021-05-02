@@ -205,25 +205,25 @@ with $N=8$ antennas and $d=\lambda/2$.
 What is the beamforming gain on that path using the BF vector in part (a)?
 \end{enumerate}
 
-\item \emph{Constrained beamforming.} Consider a MISO channel,
+\item \emph{Constrained beamforming.} Consider a SIMO channel,
 \[
     \rbf = \hbf x + \vbf, \quad \vbf \sim C{\mathcal N}(0,N_0 \Ibf), \quad |x|^2 = E_x.
 \]
 \begin{enumerate}[label=(\alph*)]
 \item What is the SNR after beamforming with a vector $\wbf$?
 \item What is the maximum SNR after beamforming if we are allowed any vector $\wbf$?
-\item What is the maximum SNR after beamforming if the components of $\wbf$ 
+\item What is the maximum SNR after beamforming if the components of $\wbf$
 must be constant magnitude, $|w_n| = 1$.  That is, you can only change the phase of $w_n$.
 This commonly occurs in analog beamforming systems.
-\item What is the maximum SNR after beamforming if 
+\item What is the maximum SNR after beamforming if
 $w_n \neq 0$ for only one antenna $n$.  This is called antenna selection beamforming.
 \item Suppose $\hbf = [4,2+i,-1,i]\tran$ and $E_x/N_0=$\, \si{5}{dB}.  What is the SNR
 after beamforming in parts (b), (c) and (d)?
 \end{enumerate}
 
 
-\item \label{prob:freq_resp} 
-\emph{Vector frequency response}.  Consider a MISO channel where
+\item \label{prob:freq_resp}
+\emph{Vector frequency response}.  Consider a SIMO channel where
 \[
     \rbf = \hbf(f)\xbf + \vbf, \quad \vbf \sim C{\mathcal N}(0,N_0 \Ibf), \quad |x|^2 = E_x,
 \]
@@ -264,10 +264,10 @@ described by TX and RX spatial signatures $\ubf_{\rm tx}(\Omega^{\rm tx}_\ell)$
 and $\ubf_{\rm rx}(\Omega^{\rm rx}_\ell)$ and complex gains
 $g_\ell$.
 For each of the  channel matrices,
-find the rank $r$, the maximum singular value and the optimal TX and RX 
+find the rank $r$, the maximum singular value and the optimal TX and RX
 beamforming vectors.  Assume all matrices have dimensions
  $\Hbf \in \C^{N_r \times N_t}$,
-and the spatial signatures are normalized so that 
+and the spatial signatures are normalized so that
 \[
     \|\ubf_{\rm tx}(\Omega^{\rm tx})\|^2=N_t, \quad
     \|\ubf_{\rm rx}(\Omega^{\rm rx})\|^2=N_r,
@@ -276,10 +276,10 @@ for all angles $\Omega^{\rm tx}$ and $\Omega^{\rm rx}$.
 \begin{enumerate}[label=(\alph*)]
 \item Single path channel:
 \[
-    \Hbf = g_1 
+    \Hbf = g_1
         \ubf_{\rm rx}(\Omega_1^{\rm rx}) \ubf_{\rm tx}(\Omega_1^{\rm tx}).
 \]
-\item Two channel paths with same RX angle $\Omega_1^{\rm rx}$ 
+\item Two channel paths with same RX angle $\Omega_1^{\rm rx}$
 and two different TX angles, $\Omega_1^{\rm tx}$ and $\Omega_2^{\rm tx}$:
 \[
     \Hbf = g_1
@@ -288,7 +288,7 @@ and two different TX angles, $\Omega_1^{\rm tx}$ and $\Omega_2^{\rm tx}$:
 \]
 Assume $|g_1| > |g_2|$ and $\ubf_{\rm tx}(\Omega_1^{\rm tx}) \perp \ubf_{\rm tx}(\Omega_2^{\rm tx})$
 
-\item Two channel paths with two different RX angles 
+\item Two channel paths with two different RX angles
 and two different TX angles:
 \[
     \Hbf = g_1
@@ -309,20 +309,20 @@ for some $\rho$ with $|\rho|\leq 1$.
 an array with $N$ elements can generally obtain a gain of $N$ (in linear scale).
 However, in this exercise, we will show that the gain is more limited when the
 antennas are closely spaced.  To this end, consider a  ULA with $N$ elements
-with total length $L$, so the antennas are spaced by $L/N$.   
+with total length $L$, so the antennas are spaced by $L/N$.
 Given a beamforming vector $\wbf \in \C^N$,
 suppose the power intensity at angle $\phi$ is,
 \[
     U(\phi) = c|\wbf\tran \ubf(\phi)|^2,
 \]
 where $\ubf(\phi)$ is the spatial signature and $c > 0$ is some constant.
-Suppose we use the all ones beamforming vector $w_n = \frac{1}{N}$ so that the 
+Suppose we use the all ones beamforming vector $w_n = \frac{1}{N}$ so that the
 energy is maximized at $\phi = 0$.
 \begin{enumerate}[label=(\alph*)]
 \item Write the spatial signature $\ubf(\phi)$ as a function of the total array length
 $L$, wavelength $\lambda$ and number of elements $N$.
 
-\item Find the limit 
+\item Find the limit
 \[
     \lim_{N \rightarrow \infty} U(\phi).
 \]
@@ -336,7 +336,7 @@ where $P_{\rm rad}$ is the total radiated power,
     P_{\rm rad} = \int_{-\pi/2}^{\pi/2} \int_{-\pi}^{\pi} U(\phi)\cos \theta \,
         \dd \phi \,\dd \theta.
 \]
-Use MATLAB to plot $D(\phi)$ using the limit of large numbers of antennas for $L=2\lambda$, 
+Use MATLAB to plot $D(\phi)$ using the limit of large numbers of antennas for $L=2\lambda$,
 $4\lambda$ and $8\lambda$.  What is the peak gain in each case.
 
 
@@ -352,5 +352,33 @@ $4\lambda$ and $8\lambda$.  What is the peak gain in each case.
 
 
 \end{document}
+
+slide 8 14 def p0 p1
+
+slide 12 index i
+multiple class
+bring back bayes risk
+
+25 y-yhat
+30 add numbers
+
+create one hot
+another ex for one SE rule
+remove 
+param est
+review PCA
+
+add error slide 9
+
+covert risk min side to slide.  C and L
+
+compress ridge / lasso to one slide
+beta ridge formula
+
+Use SVD
+
+
+
+
 
 
