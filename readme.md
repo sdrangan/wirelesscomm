@@ -83,6 +83,7 @@ of the semester.  Other topics may be added at the end depending on time.
 * Unit 9.  Introduction to MIMO 
     * Lecture: [[PDF]](./lectures/Unit09_MIMO.pdf) [[PPT]](./lectures/Unit09_MIMO.pptx) 
     * Demo: Computing the MIMO Capacity [[PDF]](./unit09_mimo/mimoCapaciy.pdf) [[Matlab Live]](./unit09_mimo/mimoCapaciy.mlx)
+    * Demo: Indoor channel data [[PDF]](./unit09_mimo/indoorDataDemo.pdf) [[Matlab Live]](./unit09_mimo/indoorDataDemo.mlx)
     
 
 
