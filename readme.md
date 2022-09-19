@@ -45,7 +45,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * Demo: Simulating AWGN Noise [[PDF]](./unit02_propagation/demo_awgn.pdf) [[Matlab Live]](./unit02_propagation/demo_awgn.mlx)
     * Demo: Propagation and rate modeling [[PDF]](./unit02_propagation/demo_path_loss_model.pdf) [[Matlab]](./unit02_propagation/demo_path_loss_model.m)
     * Problems:  [[PDF]](./unit02_propagation/prob/prob_propagation.pdf) [[Latex]](./unit02_propagation/prob/prob_propagation.tex)
-    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./unit02_propagation/lab_prop_modeling_partial.m)
+    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling.pdf) [[Matlab Live]](./unit02_propagation/lab_prop_modeling.mlx)
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
