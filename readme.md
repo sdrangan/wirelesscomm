@@ -13,6 +13,13 @@ The course assumes you are familiar with digital communications at the graduate 
 
 Additionally, some lecture notes (and problems to be added later) assume you have access to MATLAB along with the communications, phased array and antenna toolboxes.
 
+
+## SDR Labs
+I am starting to add software-defined radio (SDR) labs.  The labs are based on the
+simple, but powerful [ADALM-Pluto boards](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
+The SDRs were used for the digital communications class, and you can look
+in the [SDR github repo](https://github.com/sdrangan/sdrlab) for some introductory material.
+
 ## Feedback
 
 Any feedback is welcome.  If you find errors, have ideas for improvements,
