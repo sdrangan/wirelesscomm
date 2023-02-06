@@ -25,9 +25,8 @@ from the former TA Ish Jain.
 
 
 ## Lecture Sequence
-The tentative plan for the lectures are below.  Right now, only a few lectures
-have full material.  We will be hoping to add to this material over the course
-of the semester.  Other topics may be added at the end depending on time.
+The tentative plan for the lectures are below. The material is continuously evoloving. 
+
 
 * Course Introduction
     * Lecture: [[PDF]](./lectures/CourseAdmin.pdf) [[PPT]](./lectures/CourseAdmin.pptx) 
@@ -51,7 +50,7 @@ of the semester.  Other topics may be added at the end depending on time.
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
     * Demo: Simulating fading [[PDF]](./unit03_fading/demo_fading.pdf) [[Matlab Live]](./fading/unit03_demo_fading.mlx)
     * Problems:  [[PDF]](./unit03_fading/prob/prob_fading.pdf) [[Latex]](./unit03_fading/prob/prob_fading.tex)
-    * Lab:  5G channel sounding with Doppler [[PDF]](./unit03_fading/partial/lab_chan_sounder.pdf) [[Matlab]](./unit03_fading/partial/lab_chan_sounder.m)
+    * Lab with SDR:  Simulating multipath fading [[Directory]](./unit03_fading/partial) 
 * Unit 4.  Capacity and Coding on Fading Channels
     * Lecture: [[PDF]](./lectures/Unit04_Coding.pdf) [[PPT]](./lectures/Unit04_Fading.pptx) 
     * [Lecture videos](./unit04_coding/readme.md) and in-class exercises

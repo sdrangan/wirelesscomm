@@ -17,15 +17,31 @@ classdef SISOMPChan < matlab.System
     end
     
     methods 
-        function obj = SISOMPChan(varargin)
+        function obj = SISOMPChan(opt)
             % Constructor:  
-            % The syntax allows you to call the constructor with syntax of
-            % the form:
-            %
-            %     chan = SISOMPChan('Prop1', Val1, 'Prop2', val2, ...);
-            if nargin >= 1
-                obj.set(varargin{:});
+            arguments
+                opt.fsamp (1,1) = 28e9;
+                opt.gain (:,1) = 1;
+                opt.dly (:,1) = 0;
+                opt.dop (:,1) = 0;
+
             end
+
+            % Check number of paths
+            npath = length(opt.gain);
+            if (length(opt.dly) ~= npath)
+                error('gain and dly must have same number of elements');
+            end
+            if (length(opt.dop) ~= npath)
+                error('gain and dop must have same number of elements');
+            end                      
+
+            % Set the parameters
+            obj.fsamp = opt.fsamp;
+            obj.gain = opt.gain;
+            obj.dly = opt.dly;
+            obj.dop = opt.dop;
+
             
         end
         
@@ -36,57 +52,70 @@ classdef SISOMPChan < matlab.System
               % For the SISO MP channel, we will use this point to
               % construct the fractional delay object.  
               
-              % TODO:  Create a dsp.VariableFractionalDelay object 
-              % and store it is fracDly.  Use the parameters
-              %  'InterpolationMethod', 'Farrow',
-              %  'FilterLength',8
-              %  'FarrowSmallDelayAction','Use off-centered kernel',...
-              %  'MaximumDelay', 1024       
+              % Creates the fractional delay object
+              obj.fracDly = dsp.VariableFractionalDelay(...
+                'InterpolationMethod', 'Farrow','FilterLength',8,...
+                'FarrowSmallDelayAction','Use off-centered kernel',...
+                'MaximumDelay', 1024);                           
         end
         
         function resetImpl(obj)
             % reset:  Called on the first step after reset or release.
             
-            % TODO:  Reset the fracDly object
+            % Reset the fracDly object
+            obj.fracDly.reset();
             
-            % TODO:  Initialize phases, phaseInit, to a row vector of 
+            % Initialize phases, phaseInit, to a row vector of 
             % dimension equal to the number of paths with uniform values 
             % from 0 to 2pi
+            npath = length(obj.gain);
+            obj.phaseInit = 2*pi*rand(1,npath);
         end
         
         function releaseImpl(obj)
             % release:  Called after the release method
             
-            % TODO:  Release the fracDly object
+            % Release the fracDly object
+            obj.fracDly.release();
         end
         
         function y = stepImpl(obj, x)
             % step:  Run a vector of samples through the channel
             
-                        
-            % TODO:  Compute the delay in samples
-            %    dlySamp = ...
+            % Get the length of the signal
+            nsamp = size(x,1);
+
+            % TODO:  Compute the delay in samples for each path
+            %    dlySamp = ...            
             
             % TODO:  Compute gain of each path in linear scale
+            % from obj.gain.
             %    gainLin = ...
-             
-            % TODO:  Use the fracDly object to compute delayed versions of
-            % the input x.
-            %     xdly = ...
-            % The resulting xdly should be nsamp x npath.
             
-            % TODO:  Using the Doppler shifts, compute the phase rotations 
-            % on each path.  Specifically, if nsamp = length(x), create a
-            % (nsamp+1) x npath matrix 
-            %     phase(i,k) = phase rotation on sample i and path k
-
             
-            % TODO:  Save the final phase, phase(nsamp+1,:)
+            % TODO:  Create a matrix xdly where xdly(:,k) is the 
+            % signal x, delayed by dlySamp(k).  You can use the 
+            % obj.fracDly object to perform the delay. The resulting
+            % matrix, xdly, should be be nsamp x npath where 
+            % nsamp = length(x).
+            %     xdly = ...          
+            
+            
+            % TODO:  Create a matrix phase where phase(i,k) is the phase
+            % shift in radians on sample i of path k given by:
+            %   phase(i,k) = obj.phaseInit(k) + 2*pi*obj.dop(k)*(i-1)/obj.fsamp
+            % The matrix should be (nsamp+1) x npath 
+            
+            
+            % Save the final phase, phase(nsamp+1,:)
             % as phaseInit for the next step.
+            obj.phaseInit = phase(nsamp+1,:);
             
             % TODO:  Apply the phases and gain to each path, add the
-            % resutls and store in y.
-             
+            % paths and store the result in y.
+            %   y = ...
+            
+            
         end
     end
 end
