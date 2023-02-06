@@ -37,14 +37,14 @@ The tentative plan for the lectures are below. The material is continuously evol
     * Demo: Calculating and displaying antenna patterns [[PDF]](./unit01_antennas/demo_antennas.pdf) [[Matlab]](./unit01_antennas/demo_antennas.m)
     * Demo: 3GPP 5G antenna model [[PDF]](./unit01_antennas/demo_3gpp_antenna.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
-    * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna_partial.pdf) [[Matlab]](./unit01_antennas/lab_uav_antenna_partial.m)
+    * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna.pdf) [[Matlab Live]](./unit01_antennas/lab_uav_antenna.mlx)
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
     * [Lecture videos](./unit02_propagation/readme.md) and in-class exercises
     * Demo: Simulating AWGN Noise [[PDF]](./unit02_propagation/demo_awgn.pdf) [[Matlab Live]](./unit02_propagation/demo_awgn.mlx)
     * Demo: Propagation and rate modeling [[PDF]](./unit02_propagation/demo_path_loss_model.pdf) [[Matlab]](./unit02_propagation/demo_path_loss_model.m)
     * Problems:  [[PDF]](./unit02_propagation/prob/prob_propagation.pdf) [[Latex]](./unit02_propagation/prob/prob_propagation.tex)
-    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling_partial.pdf) [[Matlab]](./unit02_propagation/lab_prop_modeling_partial.m)
+    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling.pdf) [[Matlab Live]](./unit02_propagation/lab_prop_modeling.mlx)
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
