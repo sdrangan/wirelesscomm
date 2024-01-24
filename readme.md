@@ -17,8 +17,7 @@ Additionally, some lecture notes (and problems to be added later) assume you hav
 ## SDR Labs
 I am starting to add software-defined radio (SDR) labs.  The labs are based on the
 simple, but powerful [ADALM-Pluto boards](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
-The SDRs were used for the digital communications class, and you can look
-in the [SDR github repo](https://github.com/sdrangan/sdrlab) for some introductory material.
+The SDRs were used for the [digital communications class](https://github.com/sdrangan/digitalcomm) and you can look there for introductory material.
 
 ## Feedback
 
@@ -34,6 +33,7 @@ from the former TA Ish Jain.
 ## Lecture Sequence
 The tentative plan for the lectures are below. The material is continuously evoloving. 
 
+You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/wirelesscomm).
 
 * Course Introduction
     * Lecture: [[PDF]](./lectures/CourseAdmin.pdf) [[PPT]](./lectures/CourseAdmin.pptx) 
@@ -43,6 +43,7 @@ The tentative plan for the lectures are below. The material is continuously evol
     * [Lecture videos](./unit01_antennas/readme.md) and in-class exercises
     * Demo: Calculating and displaying antenna patterns [[PDF]](./unit01_antennas/demo_antennas.pdf) [[Matlab]](./unit01_antennas/demo_antennas.m)
     * Demo: 3GPP 5G antenna model [[PDF]](./unit01_antennas/demo_3gpp_antenna.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
+    * Demo: Spherical coordiantes and rotation matrices [[PDF]](./unit01_antennas/rotation.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna.pdf) [[Matlab Live]](./unit01_antennas/lab_uav_antenna.mlx)
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
