@@ -19,6 +19,12 @@ I am starting to add software-defined radio (SDR) labs.  The labs are based on t
 simple, but powerful [ADALM-Pluto boards](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html).
 The SDRs were used for the [digital communications class](https://github.com/sdrangan/digitalcomm) and you can look there for introductory material.
 
+
+## Nvidia Sionna 
+[Sionna](https://nvlabs.github.io/sionna/) is a fully open-source Tensorflow-based package developed by Nvidia to support physical layer wireless experiments.
+While it does not have the full functionality of MATLAB's toolboxes, it offers integration with python and Tensorflow for machine learning experiments along
+with ray tracing.  We are starting to use it for some labs and demos.
+
 ## Feedback
 
 Any feedback is welcome.  If you find errors, have ideas for improvements,
@@ -44,6 +50,7 @@ You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathwo
     * Demo: Calculating and displaying antenna patterns [[PDF]](./unit01_antennas/demo_antennas.pdf) [[Matlab]](./unit01_antennas/demo_antennas.m)
     * Demo: 3GPP 5G antenna model [[PDF]](./unit01_antennas/demo_3gpp_antenna.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
     * Demo: Spherical coordiantes and rotation matrices [[PDF]](./unit01_antennas/rotation.pdf) [[Matlab live]](./unit01_antennas/demo_3gpp_antenna.m)
+    * Sionna demo: Free-space propagation with Nvidia Sionna [[ipynb]](./unit01_antennas/demo_sionna_free_space.ipynb)
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
     * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna.pdf) [[Matlab Live]](./unit01_antennas/lab_uav_antenna.mlx)
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
