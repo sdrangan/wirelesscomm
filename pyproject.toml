@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wirelesscomm"
+authors = [
+    {name = "Sundeep Rangan", email = "srangan@nyu.edu"},
+]
+description = "Python tools for the NYU wireless communications class"
+readme = "readme.md"
+requires-python = ">=3.7"
+keywords = ["one", "two"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "requests",
+    'importlib-metadata; python_version<"3.8"',
+]
+dynamic = ["version"]
+
+[tool.setuptools]
+packages = ['sionnautils']
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+
+
