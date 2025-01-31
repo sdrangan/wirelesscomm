@@ -54,7 +54,10 @@ You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathwo
       <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/unit01_antennas/demo_sionna_free_space.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
     * Problems:  [[PDF]](./unit01_antennas/prob/prob_antennas.pdf) [[Latex]](./unit01_antennas/prob/prob_antennas.tex)
-    * Lab:  Simulating a 28 GHz antenna for a UAV [[PDF]](./unit01_antennas/lab_uav_antenna.pdf) [[Matlab Live]](./unit01_antennas/lab_uav_antenna.mlx) 
+    * Lab:  Simulating a 28 GHz antenna for a UAV 
+        * [[Matlab Live version]](./unit01_antennas/lab_uav_antenna.mlx) [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/wirelesscomm&file=unit01_antennas/lab_uav_antenna.mlx)
+        * [[Sionna version]](./unit01_antennas/lab_uav_antenna_sb.ipynb) <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/unit01_antennas/lab_uav_antenna_sn.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 * Unit 2.  Non-LOS Propagation and Link-Budget Analysis 
     * Lecture: [[PDF]](./lectures/Unit02_Propagation.pdf) [[PPT]](./lectures/Unit02_Propagation.pptx) 
     * [Lecture videos](./unit02_propagation/readme.md) and in-class exercises
