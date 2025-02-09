@@ -64,7 +64,10 @@ You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathwo
     * Demo: Simulating AWGN Noise [[PDF]](./unit02_propagation/demo_awgn.pdf) [[Matlab Live]](./unit02_propagation/demo_awgn.mlx)
     * Demo: Propagation and rate modeling [[PDF]](./unit02_propagation/demo_path_loss_model.pdf) [[Matlab]](./unit02_propagation/demo_path_loss_model.m)
     * Problems:  [[PDF]](./unit02_propagation/prob/prob_propagation.pdf) [[Latex]](./unit02_propagation/prob/prob_propagation.tex)
-    * Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling.pdf) [[Matlab Live]](./unit02_propagation/lab_prop_modeling.mlx)
+    * Matlab Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling.pdf) [[Matlab Live]](./unit02_propagation/lab_prop_modeling.mlx)[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/wirelesscomm&file=unit02_propagation/lab_prop_modeling.mlx)
+    * Sionna Lab:  Ray tracing and channel data exploration [[ipynb]](./unit02_propagation/lab_ray_tracing.ipynb)
+	  <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/unit02_propagation/lab_ray_tracing.ipynb">
+    *  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
