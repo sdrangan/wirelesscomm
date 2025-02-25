@@ -67,13 +67,16 @@ You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathwo
     * Matlab Lab:  Propagation modeling from ray tracing data [[PDF]](./unit02_propagation/lab_prop_modeling.pdf) [[Matlab Live]](./unit02_propagation/lab_prop_modeling.mlx)[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=sdrangan/wirelesscomm&file=unit02_propagation/lab_prop_modeling.mlx)
     * Sionna Lab:  Ray tracing and channel data exploration [[ipynb]](./unit02_propagation/lab_ray_tracing.ipynb)
 	  <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/unit02_propagation/lab_ray_tracing.ipynb">
-    *  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 * Unit 3.  Multipath Fading
     * Lecture: [[PDF]](./lectures/Unit03_Fading.pdf) [[PPT]](./lectures/Unit03_Fading.pptx) 
     * [Lecture videos](./unit03_fading/readme.md) and in-class exercises
     * Demo: Simulating fading [[PDF]](./unit03_fading/demo_fading.pdf) [[Matlab Live]](./fading/unit03_demo_fading.mlx)
     * Problems:  [[PDF]](./unit03_fading/prob/prob_fading.pdf) [[Latex]](./unit03_fading/prob/prob_fading.tex)
     * Lab with SDR:  Simulating multipath fading [[Directory]](./unit03_fading/partial) 
+    * Sionna demo:  Creating a 3d environment with Geo2SigGen  [[ipynb]](./docs/geodemo/demo_scenegen.ipynb)
+     <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/docs/geodemo/demo_scenegen.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 * Unit 4.  Capacity and Coding on Fading Channels
     * Lecture: [[PDF]](./lectures/Unit04_Coding.pdf) [[PPT]](./lectures/Unit04_Fading.pptx) 
     * [Lecture videos](./unit04_coding/readme.md) and in-class exercises
