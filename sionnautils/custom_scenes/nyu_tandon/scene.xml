@@ -1,0 +1,1928 @@
+<?xml version="1.0" ?>
+<scene version="2.1.0">
+    <default name="spp" value="4096"/>
+    <default name="resx" value="1024"/>
+    <default name="resy" value="768"/>
+    <integrator type="path">
+        <integer name="max_depth" value="12"/>
+    </integrator>
+    <bsdf type="twosided" id="mat-itu_concrete">
+        <bsdf type="diffuse">
+            <rgb value="0.539479 0.539479 0.53948" name="reflectance"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="mat-itu_marble">
+        <bsdf type="diffuse">
+            <rgb value="0.701101 0.644479 0.48515" name="reflectance"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="mat-itu_metal">
+        <bsdf type="diffuse">
+            <rgb value="0.219526 0.219526 0.254152" name="reflectance"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="mat-itu_wood">
+        <bsdf type="diffuse">
+            <rgb value="0.043 0.58 0.184" name="reflectance"/>
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="mat-itu_wet_ground">
+        <bsdf type="diffuse">
+            <rgb value="0.91 0.569 0.055" name="reflectance"/>
+        </bsdf>
+    </bsdf>
+    <emitter type="constant" id="World">
+        <rgb value="1.000000 1.000000 1.000000" name="radiance"/>
+    </emitter>
+    <sensor type="perspective" id="Camera">
+        <string name="fov_axis" value="x"/>
+        <float name="fov" value="42.854885"/>
+        <float name="principal_point_offset_x" value="0.000000"/>
+        <float name="principal_point_offset_y" value="-0.000000"/>
+        <float name="near_clip" value="0.100000"/>
+        <float name="far_clip" value="10000.000000"/>
+        <transform name="to_world">
+            <rotate x="1" angle="0"/>
+            <rotate y="1" angle="0"/>
+            <rotate z="1" angle="-90"/>
+            <translate value="0 0 100"/>
+        </transform>
+        <sampler type="independent">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+        <film type="hdrfilm">
+            <integer name="width" value="$resx"/>
+            <integer name="height" value="$resy"/>
+        </film>
+    </sensor>
+    <shape type="ply" id="mesh-ground">
+        <string name="filename" value="mesh/ground.ply"/>
+        <ref id="mat-itu_wet_ground" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_0">
+        <string name="filename" value="mesh/building_0.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_1">
+        <string name="filename" value="mesh/building_1.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_3">
+        <string name="filename" value="mesh/building_3.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_4">
+        <string name="filename" value="mesh/building_4.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_5">
+        <string name="filename" value="mesh/building_5.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_6">
+        <string name="filename" value="mesh/building_6.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_7">
+        <string name="filename" value="mesh/building_7.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_8">
+        <string name="filename" value="mesh/building_8.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_9">
+        <string name="filename" value="mesh/building_9.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_10">
+        <string name="filename" value="mesh/building_10.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_11">
+        <string name="filename" value="mesh/building_11.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_12">
+        <string name="filename" value="mesh/building_12.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_13">
+        <string name="filename" value="mesh/building_13.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_14">
+        <string name="filename" value="mesh/building_14.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_15">
+        <string name="filename" value="mesh/building_15.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_16">
+        <string name="filename" value="mesh/building_16.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_17">
+        <string name="filename" value="mesh/building_17.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_18">
+        <string name="filename" value="mesh/building_18.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_19">
+        <string name="filename" value="mesh/building_19.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_20">
+        <string name="filename" value="mesh/building_20.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_21">
+        <string name="filename" value="mesh/building_21.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_22">
+        <string name="filename" value="mesh/building_22.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_23">
+        <string name="filename" value="mesh/building_23.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_24">
+        <string name="filename" value="mesh/building_24.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_25">
+        <string name="filename" value="mesh/building_25.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_26">
+        <string name="filename" value="mesh/building_26.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_27">
+        <string name="filename" value="mesh/building_27.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_28">
+        <string name="filename" value="mesh/building_28.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_29">
+        <string name="filename" value="mesh/building_29.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_30">
+        <string name="filename" value="mesh/building_30.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_31">
+        <string name="filename" value="mesh/building_31.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_32">
+        <string name="filename" value="mesh/building_32.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_33">
+        <string name="filename" value="mesh/building_33.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_34">
+        <string name="filename" value="mesh/building_34.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_35">
+        <string name="filename" value="mesh/building_35.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_36">
+        <string name="filename" value="mesh/building_36.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_37">
+        <string name="filename" value="mesh/building_37.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_38">
+        <string name="filename" value="mesh/building_38.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_39">
+        <string name="filename" value="mesh/building_39.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_40">
+        <string name="filename" value="mesh/building_40.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_41">
+        <string name="filename" value="mesh/building_41.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_42">
+        <string name="filename" value="mesh/building_42.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_43">
+        <string name="filename" value="mesh/building_43.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_44">
+        <string name="filename" value="mesh/building_44.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_45">
+        <string name="filename" value="mesh/building_45.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_46">
+        <string name="filename" value="mesh/building_46.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_47">
+        <string name="filename" value="mesh/building_47.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_48">
+        <string name="filename" value="mesh/building_48.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_49">
+        <string name="filename" value="mesh/building_49.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_50">
+        <string name="filename" value="mesh/building_50.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_51">
+        <string name="filename" value="mesh/building_51.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_52">
+        <string name="filename" value="mesh/building_52.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_53">
+        <string name="filename" value="mesh/building_53.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_54">
+        <string name="filename" value="mesh/building_54.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_55">
+        <string name="filename" value="mesh/building_55.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_56">
+        <string name="filename" value="mesh/building_56.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_57">
+        <string name="filename" value="mesh/building_57.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_58">
+        <string name="filename" value="mesh/building_58.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_59">
+        <string name="filename" value="mesh/building_59.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_60">
+        <string name="filename" value="mesh/building_60.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_61">
+        <string name="filename" value="mesh/building_61.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_62">
+        <string name="filename" value="mesh/building_62.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_63">
+        <string name="filename" value="mesh/building_63.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_64">
+        <string name="filename" value="mesh/building_64.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_65">
+        <string name="filename" value="mesh/building_65.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_66">
+        <string name="filename" value="mesh/building_66.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_67">
+        <string name="filename" value="mesh/building_67.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_68">
+        <string name="filename" value="mesh/building_68.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_69">
+        <string name="filename" value="mesh/building_69.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_70">
+        <string name="filename" value="mesh/building_70.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_71">
+        <string name="filename" value="mesh/building_71.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_72">
+        <string name="filename" value="mesh/building_72.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_73">
+        <string name="filename" value="mesh/building_73.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_74">
+        <string name="filename" value="mesh/building_74.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_75">
+        <string name="filename" value="mesh/building_75.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_76">
+        <string name="filename" value="mesh/building_76.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_77">
+        <string name="filename" value="mesh/building_77.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_78">
+        <string name="filename" value="mesh/building_78.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_79">
+        <string name="filename" value="mesh/building_79.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_80">
+        <string name="filename" value="mesh/building_80.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_81">
+        <string name="filename" value="mesh/building_81.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_82">
+        <string name="filename" value="mesh/building_82.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_83">
+        <string name="filename" value="mesh/building_83.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_84">
+        <string name="filename" value="mesh/building_84.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_85">
+        <string name="filename" value="mesh/building_85.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_86">
+        <string name="filename" value="mesh/building_86.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_87">
+        <string name="filename" value="mesh/building_87.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_88">
+        <string name="filename" value="mesh/building_88.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_89">
+        <string name="filename" value="mesh/building_89.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_90">
+        <string name="filename" value="mesh/building_90.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_91">
+        <string name="filename" value="mesh/building_91.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_92">
+        <string name="filename" value="mesh/building_92.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_93">
+        <string name="filename" value="mesh/building_93.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_94">
+        <string name="filename" value="mesh/building_94.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_95">
+        <string name="filename" value="mesh/building_95.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_96">
+        <string name="filename" value="mesh/building_96.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_97">
+        <string name="filename" value="mesh/building_97.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_98">
+        <string name="filename" value="mesh/building_98.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_99">
+        <string name="filename" value="mesh/building_99.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_100">
+        <string name="filename" value="mesh/building_100.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_101">
+        <string name="filename" value="mesh/building_101.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_102">
+        <string name="filename" value="mesh/building_102.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_103">
+        <string name="filename" value="mesh/building_103.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_104">
+        <string name="filename" value="mesh/building_104.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_105">
+        <string name="filename" value="mesh/building_105.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_106">
+        <string name="filename" value="mesh/building_106.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_107">
+        <string name="filename" value="mesh/building_107.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_108">
+        <string name="filename" value="mesh/building_108.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_109">
+        <string name="filename" value="mesh/building_109.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_110">
+        <string name="filename" value="mesh/building_110.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_111">
+        <string name="filename" value="mesh/building_111.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_112">
+        <string name="filename" value="mesh/building_112.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_113">
+        <string name="filename" value="mesh/building_113.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_114">
+        <string name="filename" value="mesh/building_114.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_115">
+        <string name="filename" value="mesh/building_115.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_116">
+        <string name="filename" value="mesh/building_116.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_117">
+        <string name="filename" value="mesh/building_117.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_118">
+        <string name="filename" value="mesh/building_118.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_119">
+        <string name="filename" value="mesh/building_119.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_120">
+        <string name="filename" value="mesh/building_120.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_121">
+        <string name="filename" value="mesh/building_121.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_122">
+        <string name="filename" value="mesh/building_122.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_123">
+        <string name="filename" value="mesh/building_123.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_124">
+        <string name="filename" value="mesh/building_124.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_125">
+        <string name="filename" value="mesh/building_125.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_126">
+        <string name="filename" value="mesh/building_126.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_127">
+        <string name="filename" value="mesh/building_127.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_128">
+        <string name="filename" value="mesh/building_128.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_129">
+        <string name="filename" value="mesh/building_129.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_130">
+        <string name="filename" value="mesh/building_130.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_131">
+        <string name="filename" value="mesh/building_131.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_132">
+        <string name="filename" value="mesh/building_132.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_133">
+        <string name="filename" value="mesh/building_133.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_134">
+        <string name="filename" value="mesh/building_134.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_135">
+        <string name="filename" value="mesh/building_135.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_136">
+        <string name="filename" value="mesh/building_136.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_137">
+        <string name="filename" value="mesh/building_137.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_138">
+        <string name="filename" value="mesh/building_138.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_139">
+        <string name="filename" value="mesh/building_139.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_140">
+        <string name="filename" value="mesh/building_140.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_141">
+        <string name="filename" value="mesh/building_141.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_142">
+        <string name="filename" value="mesh/building_142.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_143">
+        <string name="filename" value="mesh/building_143.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_144">
+        <string name="filename" value="mesh/building_144.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_145">
+        <string name="filename" value="mesh/building_145.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_146">
+        <string name="filename" value="mesh/building_146.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_147">
+        <string name="filename" value="mesh/building_147.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_148">
+        <string name="filename" value="mesh/building_148.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_149">
+        <string name="filename" value="mesh/building_149.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_150">
+        <string name="filename" value="mesh/building_150.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_151">
+        <string name="filename" value="mesh/building_151.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_152">
+        <string name="filename" value="mesh/building_152.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_153">
+        <string name="filename" value="mesh/building_153.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_154">
+        <string name="filename" value="mesh/building_154.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_155">
+        <string name="filename" value="mesh/building_155.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_156">
+        <string name="filename" value="mesh/building_156.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_157">
+        <string name="filename" value="mesh/building_157.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_158">
+        <string name="filename" value="mesh/building_158.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_159">
+        <string name="filename" value="mesh/building_159.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_160">
+        <string name="filename" value="mesh/building_160.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_161">
+        <string name="filename" value="mesh/building_161.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_162">
+        <string name="filename" value="mesh/building_162.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_163">
+        <string name="filename" value="mesh/building_163.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_164">
+        <string name="filename" value="mesh/building_164.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_165">
+        <string name="filename" value="mesh/building_165.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_166">
+        <string name="filename" value="mesh/building_166.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_167">
+        <string name="filename" value="mesh/building_167.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_168">
+        <string name="filename" value="mesh/building_168.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_169">
+        <string name="filename" value="mesh/building_169.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_170">
+        <string name="filename" value="mesh/building_170.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_171">
+        <string name="filename" value="mesh/building_171.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_172">
+        <string name="filename" value="mesh/building_172.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_173">
+        <string name="filename" value="mesh/building_173.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_174">
+        <string name="filename" value="mesh/building_174.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_175">
+        <string name="filename" value="mesh/building_175.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_176">
+        <string name="filename" value="mesh/building_176.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_177">
+        <string name="filename" value="mesh/building_177.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_178">
+        <string name="filename" value="mesh/building_178.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_179">
+        <string name="filename" value="mesh/building_179.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_180">
+        <string name="filename" value="mesh/building_180.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_181">
+        <string name="filename" value="mesh/building_181.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_182">
+        <string name="filename" value="mesh/building_182.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_183">
+        <string name="filename" value="mesh/building_183.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_184">
+        <string name="filename" value="mesh/building_184.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_185">
+        <string name="filename" value="mesh/building_185.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_186">
+        <string name="filename" value="mesh/building_186.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_187">
+        <string name="filename" value="mesh/building_187.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_188">
+        <string name="filename" value="mesh/building_188.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_189">
+        <string name="filename" value="mesh/building_189.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_190">
+        <string name="filename" value="mesh/building_190.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_191">
+        <string name="filename" value="mesh/building_191.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_192">
+        <string name="filename" value="mesh/building_192.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_193">
+        <string name="filename" value="mesh/building_193.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_194">
+        <string name="filename" value="mesh/building_194.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_195">
+        <string name="filename" value="mesh/building_195.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_196">
+        <string name="filename" value="mesh/building_196.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_197">
+        <string name="filename" value="mesh/building_197.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_198">
+        <string name="filename" value="mesh/building_198.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_199">
+        <string name="filename" value="mesh/building_199.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_200">
+        <string name="filename" value="mesh/building_200.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_201">
+        <string name="filename" value="mesh/building_201.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_202">
+        <string name="filename" value="mesh/building_202.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_203">
+        <string name="filename" value="mesh/building_203.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_204">
+        <string name="filename" value="mesh/building_204.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_205">
+        <string name="filename" value="mesh/building_205.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_206">
+        <string name="filename" value="mesh/building_206.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_207">
+        <string name="filename" value="mesh/building_207.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_208">
+        <string name="filename" value="mesh/building_208.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_209">
+        <string name="filename" value="mesh/building_209.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_210">
+        <string name="filename" value="mesh/building_210.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_211">
+        <string name="filename" value="mesh/building_211.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_212">
+        <string name="filename" value="mesh/building_212.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_213">
+        <string name="filename" value="mesh/building_213.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_214">
+        <string name="filename" value="mesh/building_214.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_215">
+        <string name="filename" value="mesh/building_215.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_216">
+        <string name="filename" value="mesh/building_216.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_217">
+        <string name="filename" value="mesh/building_217.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_218">
+        <string name="filename" value="mesh/building_218.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_219">
+        <string name="filename" value="mesh/building_219.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_220">
+        <string name="filename" value="mesh/building_220.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_221">
+        <string name="filename" value="mesh/building_221.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_222">
+        <string name="filename" value="mesh/building_222.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_223">
+        <string name="filename" value="mesh/building_223.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_224">
+        <string name="filename" value="mesh/building_224.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_225">
+        <string name="filename" value="mesh/building_225.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_226">
+        <string name="filename" value="mesh/building_226.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_227">
+        <string name="filename" value="mesh/building_227.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_228">
+        <string name="filename" value="mesh/building_228.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_229">
+        <string name="filename" value="mesh/building_229.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_230">
+        <string name="filename" value="mesh/building_230.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_231">
+        <string name="filename" value="mesh/building_231.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_232">
+        <string name="filename" value="mesh/building_232.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_233">
+        <string name="filename" value="mesh/building_233.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_234">
+        <string name="filename" value="mesh/building_234.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_235">
+        <string name="filename" value="mesh/building_235.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_236">
+        <string name="filename" value="mesh/building_236.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_237">
+        <string name="filename" value="mesh/building_237.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_238">
+        <string name="filename" value="mesh/building_238.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_239">
+        <string name="filename" value="mesh/building_239.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_240">
+        <string name="filename" value="mesh/building_240.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_241">
+        <string name="filename" value="mesh/building_241.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_242">
+        <string name="filename" value="mesh/building_242.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_243">
+        <string name="filename" value="mesh/building_243.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_244">
+        <string name="filename" value="mesh/building_244.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_245">
+        <string name="filename" value="mesh/building_245.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_246">
+        <string name="filename" value="mesh/building_246.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_247">
+        <string name="filename" value="mesh/building_247.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_248">
+        <string name="filename" value="mesh/building_248.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_249">
+        <string name="filename" value="mesh/building_249.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_250">
+        <string name="filename" value="mesh/building_250.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_251">
+        <string name="filename" value="mesh/building_251.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_252">
+        <string name="filename" value="mesh/building_252.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_253">
+        <string name="filename" value="mesh/building_253.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_254">
+        <string name="filename" value="mesh/building_254.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_255">
+        <string name="filename" value="mesh/building_255.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_256">
+        <string name="filename" value="mesh/building_256.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_257">
+        <string name="filename" value="mesh/building_257.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_258">
+        <string name="filename" value="mesh/building_258.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_259">
+        <string name="filename" value="mesh/building_259.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_260">
+        <string name="filename" value="mesh/building_260.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_261">
+        <string name="filename" value="mesh/building_261.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_262">
+        <string name="filename" value="mesh/building_262.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_263">
+        <string name="filename" value="mesh/building_263.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_264">
+        <string name="filename" value="mesh/building_264.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_265">
+        <string name="filename" value="mesh/building_265.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_266">
+        <string name="filename" value="mesh/building_266.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_267">
+        <string name="filename" value="mesh/building_267.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_268">
+        <string name="filename" value="mesh/building_268.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_269">
+        <string name="filename" value="mesh/building_269.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_270">
+        <string name="filename" value="mesh/building_270.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_271">
+        <string name="filename" value="mesh/building_271.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_272">
+        <string name="filename" value="mesh/building_272.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_273">
+        <string name="filename" value="mesh/building_273.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_274">
+        <string name="filename" value="mesh/building_274.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_275">
+        <string name="filename" value="mesh/building_275.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_276">
+        <string name="filename" value="mesh/building_276.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_277">
+        <string name="filename" value="mesh/building_277.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_278">
+        <string name="filename" value="mesh/building_278.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_279">
+        <string name="filename" value="mesh/building_279.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_280">
+        <string name="filename" value="mesh/building_280.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_281">
+        <string name="filename" value="mesh/building_281.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_282">
+        <string name="filename" value="mesh/building_282.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_283">
+        <string name="filename" value="mesh/building_283.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_284">
+        <string name="filename" value="mesh/building_284.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_285">
+        <string name="filename" value="mesh/building_285.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_286">
+        <string name="filename" value="mesh/building_286.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_287">
+        <string name="filename" value="mesh/building_287.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_288">
+        <string name="filename" value="mesh/building_288.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_289">
+        <string name="filename" value="mesh/building_289.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_290">
+        <string name="filename" value="mesh/building_290.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_291">
+        <string name="filename" value="mesh/building_291.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_292">
+        <string name="filename" value="mesh/building_292.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_293">
+        <string name="filename" value="mesh/building_293.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_294">
+        <string name="filename" value="mesh/building_294.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_295">
+        <string name="filename" value="mesh/building_295.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_296">
+        <string name="filename" value="mesh/building_296.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_297">
+        <string name="filename" value="mesh/building_297.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_298">
+        <string name="filename" value="mesh/building_298.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_299">
+        <string name="filename" value="mesh/building_299.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_300">
+        <string name="filename" value="mesh/building_300.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_301">
+        <string name="filename" value="mesh/building_301.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_302">
+        <string name="filename" value="mesh/building_302.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_303">
+        <string name="filename" value="mesh/building_303.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_304">
+        <string name="filename" value="mesh/building_304.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_305">
+        <string name="filename" value="mesh/building_305.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_306">
+        <string name="filename" value="mesh/building_306.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_307">
+        <string name="filename" value="mesh/building_307.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_308">
+        <string name="filename" value="mesh/building_308.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_309">
+        <string name="filename" value="mesh/building_309.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_310">
+        <string name="filename" value="mesh/building_310.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_311">
+        <string name="filename" value="mesh/building_311.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_312">
+        <string name="filename" value="mesh/building_312.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_313">
+        <string name="filename" value="mesh/building_313.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_314">
+        <string name="filename" value="mesh/building_314.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_315">
+        <string name="filename" value="mesh/building_315.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_316">
+        <string name="filename" value="mesh/building_316.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_317">
+        <string name="filename" value="mesh/building_317.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_318">
+        <string name="filename" value="mesh/building_318.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_319">
+        <string name="filename" value="mesh/building_319.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_320">
+        <string name="filename" value="mesh/building_320.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_321">
+        <string name="filename" value="mesh/building_321.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_322">
+        <string name="filename" value="mesh/building_322.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_323">
+        <string name="filename" value="mesh/building_323.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_324">
+        <string name="filename" value="mesh/building_324.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_325">
+        <string name="filename" value="mesh/building_325.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_326">
+        <string name="filename" value="mesh/building_326.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_327">
+        <string name="filename" value="mesh/building_327.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_328">
+        <string name="filename" value="mesh/building_328.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_329">
+        <string name="filename" value="mesh/building_329.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_330">
+        <string name="filename" value="mesh/building_330.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_331">
+        <string name="filename" value="mesh/building_331.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_332">
+        <string name="filename" value="mesh/building_332.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_333">
+        <string name="filename" value="mesh/building_333.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_334">
+        <string name="filename" value="mesh/building_334.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_335">
+        <string name="filename" value="mesh/building_335.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_336">
+        <string name="filename" value="mesh/building_336.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_337">
+        <string name="filename" value="mesh/building_337.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_338">
+        <string name="filename" value="mesh/building_338.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_339">
+        <string name="filename" value="mesh/building_339.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_340">
+        <string name="filename" value="mesh/building_340.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_341">
+        <string name="filename" value="mesh/building_341.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_342">
+        <string name="filename" value="mesh/building_342.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_343">
+        <string name="filename" value="mesh/building_343.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_344">
+        <string name="filename" value="mesh/building_344.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_345">
+        <string name="filename" value="mesh/building_345.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_346">
+        <string name="filename" value="mesh/building_346.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_347">
+        <string name="filename" value="mesh/building_347.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_348">
+        <string name="filename" value="mesh/building_348.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_349">
+        <string name="filename" value="mesh/building_349.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_350">
+        <string name="filename" value="mesh/building_350.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_351">
+        <string name="filename" value="mesh/building_351.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_352">
+        <string name="filename" value="mesh/building_352.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_353">
+        <string name="filename" value="mesh/building_353.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_354">
+        <string name="filename" value="mesh/building_354.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_355">
+        <string name="filename" value="mesh/building_355.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_356">
+        <string name="filename" value="mesh/building_356.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_357">
+        <string name="filename" value="mesh/building_357.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_358">
+        <string name="filename" value="mesh/building_358.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_359">
+        <string name="filename" value="mesh/building_359.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_360">
+        <string name="filename" value="mesh/building_360.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_361">
+        <string name="filename" value="mesh/building_361.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_362">
+        <string name="filename" value="mesh/building_362.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_363">
+        <string name="filename" value="mesh/building_363.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_364">
+        <string name="filename" value="mesh/building_364.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_365">
+        <string name="filename" value="mesh/building_365.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_366">
+        <string name="filename" value="mesh/building_366.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_367">
+        <string name="filename" value="mesh/building_367.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_368">
+        <string name="filename" value="mesh/building_368.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_369">
+        <string name="filename" value="mesh/building_369.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_370">
+        <string name="filename" value="mesh/building_370.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_371">
+        <string name="filename" value="mesh/building_371.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_372">
+        <string name="filename" value="mesh/building_372.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+    <shape type="ply" id="mesh-building_373">
+        <string name="filename" value="mesh/building_373.ply"/>
+        <ref id="mat-itu_marble" name="bsdf"/>
+        <boolean name="face_normals" value="true"/>
+    </shape>
+</scene>
