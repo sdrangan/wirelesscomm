@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+import sionna as sn
 
 class PatternInterpGrid(object):
     """
@@ -116,7 +117,101 @@ class PatternInterpGrid(object):
         Eh = tf.gather_nd(self.Ehgrid, tf.stack([itheta, iphi], axis=-1))
 
         return Ev, Eh
+    
+@tf.function
+def cart_to_sph(X):
+    """
+    Cartesian to spherical coordinates
+
+    Parameters
+    ----------
+    X : (nx, 3) tf.Tensor of dtype_float
+        Coordinates in Cartesian space
+
+    Returns
+    -------
+    r : (nx,) tf.Tensor of dtype_float
+        Radius
+    theta : (nx,) tf.Tensor of dtype_float
+        Inclination angle in radians
+    phi : (nx,) tf.Tensor of dtype_float
+        Azimuth angle in radians
+    """
+    r = tf.sqrt(tf.reduce_sum(tf.square(X), axis=1))  # Radius
+    phi = tf.atan2(X[:, 1], X[:, 0])  # Azimuthal angle
+    theta = tf.acos(X[:, 2] / r)  # Polar angle
+
+    return r, theta, phi
+
+@tf.function
+def sph_to_cart(r, theta, phi):
+    """
+    Spherical to Cartesian coordinates
+
+    Parameters
+    -------
+    r : (nx,) tf.Tensor of dtype_float
+        Radius
+    theta : (nx,) tf.Tensor of dtype_float
+        Inclination angle in radians
+    phi : (nx,) tf.Tensor of dtype_float
+        Azimuth angle in radians
+
+    Returns
+    ----------
+    X : (nx, 3) tf.Tensor of dtype_float
+        Coordinates in Cartesian space
+    """
+    x = r * tf.sin(theta) * tf.cos(phi)
+    y = r * tf.sin(theta) * tf.sin(phi)
+    z = r * tf.cos(theta)
+    X = tf.stack((x, y, z), axis=1)
+
+    return X
 
 
+@tf.function
+def spatial_sig(rx, theta, phi, freq):
+    """
+    Computes the spatial signature of a signal arriving at the receiver
 
+    Parameters
+    ----------
+
+    rx : sionna.rt.Receiver
+        Receiver object
+    theta : (npath,) tf.Tensor of dtype_float
+        Inclination angle in radians of the paths
+    phi : (npath,) tf.Tensor of dtype_float
+        Azimuth angle in radians of the paths
+    freq : float
+        Frequency of the signal in Hz
+    """
+    # Compute the wavelength
+    vc = sn.SPEED_OF_LIGHT
+    lam = vc/freq
+
+    # Get real data type
+    scene = rx.scene
+    if scene.dtype == tf.complex64:
+        dtype = tf.float32
+    else:
+        dtype = tf.float64
+    
+    # Get unit vectors along directions of arrival (npath, 3)
+    npath = tf.shape(theta)[0]
+    r = tf.ones((npath,), dtype=dtype)
+    U = sph_to_cart(r, theta, phi)
+    
+    # Get the rotated positions of the arrays
+    # (nelem, 3)
+    arr = scene.rx_array
+    pos = arr.rotated_positions(rx.orientation)
+
+    # Compute the phase of the signal and the resulting spatial signature
+    phase = 2*sn.PI*tf.reduce_sum(U[None,:,:]*pos[:,None,:],\
+                           axis=2)/lam
+    sv = tf.complex(tf.cos(phase), tf.sin(phase))
+    return sv
+    
 

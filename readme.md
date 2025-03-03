@@ -103,7 +103,10 @@ You can access the MATLAB Live Scripts with [![MATLAB Online](https://www.mathwo
     * Lecture: [[PDF]](./lectures/Unit08_Beamforming.pdf) [[PPT]](./lectures/Unit08_Beamforming.pptx) 
     * Demo: Visualizing and simualting arrays [[PDF]](./unit08_bf/demoBF.pdf) [[Matlab Live]](./unit08_bf/demoBF.mlx)
     * Demo: Pattern multiplication and mutual coupling [[PDF]](./unit08_bf/mutualCoupling.pdf) [[Matlab Live]](./unit08_bf/mutualCoupling.mlx)
-    * Lab:  Simulating beamforming on a 28 GHz channel [[PDF]](./unit08_bf/labPartial/labBF.pdf) [[Matlab Live]](./unit08_bf/labPartial/labBF.pdf)
+    * Sionna demo:  Directional estimation with Nvidia Sionna [[ipynb]](./unit08_bf/demo_direct_estim.ipynb)
+	 <a target="_blank" href="https://colab.research.google.com/github/sdrangan/wirelesscomm/blob/master/unit08_bf/demo_direct_estim.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+    * Lab:  Simulating beamforming on a 28 GHz channel [[PDF]](./unit08_bf/labPartial/labBF.pdf    ) [[Matlab Live]](./unit08_bf/labPartial/labBF.pdf)
     * Problems:  [[PDF]](./unit08_bf/prob/prob_bf.pdf) [[Latex]](./unit08_bf/prob/prob_bf.tex)
 * Unit 9.  Introduction to MIMO 
     * Lecture: [[PDF]](./lectures/Unit09_MIMO.pdf) [[PPT]](./lectures/Unit09_MIMO.pptx) 

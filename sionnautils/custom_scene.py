@@ -125,3 +125,36 @@ def generate_scene(address, data_dir, descr=None, size_x=1000, size_y=1000):
         f.write(map_data_json)
 
 
+
+def lat_lon_to_xy(bbox_lat, bbox_lon, lat, long):
+    """
+    Finds the x-y location in meters from the center of the bounding box
+    given the latitude and longitude of the bounding box and the location
+
+    Args
+    ----
+    bbox_lat : (2,) array
+        Latitude of the bounding box
+    bbox_lon : (2,) array
+        Longitude of the bounding box
+    lat : float
+        Latitude of the location
+    long : float
+        Longitude of the location
+
+    Returns
+    -------
+    x : float
+        x-coordinate in meters from the center of the bounding box
+    y : float
+        y-coordinate in meters from the center of the bounding box
+    """
+    
+    cen_lat = np.mean(bbox_lat)
+    cen_long = np.mean(bbox_lon)
+    local_crs = f"+proj=aeqd +lat_0={cen_lat} +lon_0={cen_long} +datum=WGS84 +units=m"
+    transformer = Transformer.from_crs("epsg:4326", local_crs, always_xy=True)
+
+    x, y = transformer.transform(long, lat)
+
+    return x, y
